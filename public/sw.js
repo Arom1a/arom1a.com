@@ -4,7 +4,16 @@ const addResourcesToCache = async (resources) => {
 };
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(addResourcesToCache(["/bookmarks"]));
+  event.waitUntil(
+    addResourcesToCache([
+      "/bookmarks",
+      // "/bookmarks/index.html",
+      "/bookmarks/bookmarks",
+      // "/bookmarks/bookmarks/index.html",
+      "/bookmarks/ehe",
+      // "/bookmarks/ehe/index.html",
+    ])
+  );
 });
 
 const cacheFirst = async (request) => {

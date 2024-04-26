@@ -122,6 +122,7 @@
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 - [Algorithms in Rust](https://github.com/TheAlgorithms/Rust)
 - [PythonChallenge](http://www.pythonchallenge.com)
+- [Learn Git](https://learngitbranching.js.org/)
 
 ## Electrical Engineering
 
