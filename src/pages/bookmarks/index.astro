@@ -1,20 +1,11 @@
 ---
+import { getEntry } from "astro:content";
+import BookmarkLayout from "../../layouts/BookmarkLayout.astro";
 
+const bookmarks = await getEntry("bookmarks", "bookmarks");
+const { Content } = await bookmarks.render();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Aromia</title>
-  </head>
-  <body>
-    <div class="text-center">
-      <b>
-        <h1 class="text-xl">Aromia</h1>
-      </b>
-    </div>
-  </body>
-</html>
+<BookmarkLayout>
+  <Content />
+</BookmarkLayout>

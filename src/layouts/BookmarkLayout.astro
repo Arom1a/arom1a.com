@@ -1,7 +1,3 @@
----
-
----
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,12 +8,12 @@
     <title>Aromia</title>
   </head>
   <body>
-    <div class="text-center">
-      <b>
-        <h1 class="text-3xl">Aromia</h1>
-      </b>
-
-      <a href="bookmarks" class="text-blue-500">my bookmarks</a>
+    <div class="flex w-screen justify-center">
+      <div class="w-1/2">
+        <div class="prose prose-indigo">
+          <slot />
+        </div>
+      </div>
     </div>
   </body>
 </html>

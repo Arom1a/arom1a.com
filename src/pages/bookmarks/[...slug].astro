@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import BookmarkLayout from "../../layouts/BookmarkLayout.astro";
 
 export async function getStaticPaths() {
   const bookmarkEntries = await getCollection("bookmarks");
@@ -13,13 +14,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <Content />
-  </body>
-</html>
+<BookmarkLayout>
+  <Content />
+</BookmarkLayout>
