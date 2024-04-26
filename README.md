@@ -6,3 +6,5 @@ TODO:
 
 - [ ] dark theme
 - [ ] dark theme toggle
+- [ ] rearrange the bookmarks
+- [ ] offline cache for bookmarks
