@@ -14,10 +14,34 @@
   <body>
     <div class="text-center">
       <b>
-        <h1 class="text-3xl">Aromia</h1>
+        <h1 class="mt-5 text-3xl">Aromia</h1>
       </b>
 
-      <a href="bookmarks" class="text-blue-500">my bookmarks</a>
+      <a href="bookmarks" class="mt-5 text-blue-500">my bookmarks</a>
     </div>
+
+    <script is:inline>
+      const registerServiceWorker = async () => {
+        if ("serviceWorker" in navigator) {
+          try {
+            const registration = await navigator.serviceWorker.register("/sw.js", {
+              scope: "/",
+            });
+            if (registration.installing) {
+              console.log("Service worker installing");
+            } else if (registration.waiting) {
+              console.log("Service worker installed");
+            } else if (registration.active) {
+              console.log("Service worker active");
+            }
+            console.log("The scope of the service worker is " + registration.scope);
+          } catch (error) {
+            console.error(`Registration failed with ${error}`);
+          }
+        }
+      };
+
+      registerServiceWorker();
+    </script>
   </body>
 </html>
