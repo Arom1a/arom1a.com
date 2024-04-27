@@ -1,10 +1,12 @@
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open("bookmarks-cache-v1");
+  // console.log("Opened ccache");
   await cache.addAll(resources);
 };
 
 self.addEventListener("install", (event) => {
   event.waitUntil(addResourcesToCache(["/bookmarks", "/bookmarks/bookmarks", "/bookmarks/ehe"]));
+  // console.log("Service Worker finished installing");
 });
 
 const enableNavigationPreload = async () => {
