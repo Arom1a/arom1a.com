@@ -125,6 +125,7 @@
 ### Artificial Intelligence
 
 - [Hugging Face](https://huggingface.co/)
+- [Hugging Face Mirror](https://hf-mirror.com/)
 - [Civit AI](https://civitai.com/)
 - [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
