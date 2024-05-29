@@ -37,6 +37,11 @@
 - [Student Portal](https://apply-precollege.studentaffairs.cmu.edu/portal/student)
 - [Student Information Online](https://s3.andrew.cmu.edu/sio/mpa/)
 
+## Application
+
+- [Bridge U](https://app.bridge-u.com/)
+- [Common App](https://www.commonapp.org/)
+
 ## English Learning
 
 - [新东方 TPO](https://liuxue.koolearn.com/toefl/)
@@ -70,6 +75,9 @@
 - [Red Team Note](https://dmcxblue.gitbook.io/red-team-notes-2-0/)
 - [Micro8 (penetrate)](https://micro8.gitbook.io/micro8/)
 - [Deus X64](https://deusx64.ai/)
+- [PWNABLE.KR](https://pwnable.kr/)
+- [PWNABLE.TW](https://pwnable.tw/)
+- [PicoCTF](https://picoctf.org)
 
 ## Rust
 
