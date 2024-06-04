@@ -41,6 +41,7 @@
 
 - [Bridge U](https://app.bridge-u.com/)
 - [Common App](https://www.commonapp.org/)
+- [UCAS](https://ucas.com/)
 
 ## English Learning
 
@@ -96,6 +97,18 @@
 - [Frontend Masters](https://frontendmasters.com/)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
 - [30 Days JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript/)
+- [Landing Love](https://www.landing.love/)
+- [Land Book](https://land-book.com/)
+- [Bult for Mars](https://builtformars.com/ux-glossary)
+- [Webflow](https://webflow.com/made-in-webflow/portfolio/popular)
+- [UI Patterns](https://ui-patterns.com/)
+- [Call to Idea](http://www.calltoidea.com/)
+- [Nicely Done](https://nicelydone.club/)
+- [Landingfolio](https://www.landingfolio.com/)
+- [SaaS Landing Pages](https://saaslandingpage.com/)
+- [Lapa](https://www.lapa.ninja/)
+- [Page Collective](https://pagecollective.com/)
+- [One Page Love](https://onepagelove.com/)
 
 ### Cpp
 
@@ -153,7 +166,7 @@
 ## Entertainment
 
 - [Netease Music](https://music.163.com/)
-- [Arcaea Official](https://arcaea.lowiro.com/zh/)
+- [Arcaea Official](https://arcaea.lowiro.com/en/)
 - [Steam](https://store.steampowered.com/)
 - [YouTube](https://www.youtube.com/)
 - [Bilibili](https://www.bilibili.com/)
