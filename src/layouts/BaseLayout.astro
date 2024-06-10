@@ -1,0 +1,53 @@
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Aromia</title>
+  </head>
+  <body>
+    <div
+      class="fixed top-0 -z-10 h-screen w-screen bg-[radial-gradient(circle,rgba(256,256,256,1)_0_75%,rgba(243,118,203,.7)_100%)]"
+    >
+    </div>
+    <div class="grid grid-cols-7">
+      <div class="col-span-2">
+        <Navbar />
+      </div>
+
+      <div class="col-span-3 bg-[rgba(136,57,239,0.1)] p-4">
+        <!-- <div class="col-span-3 border-2 border-black"> -->
+        <slot />
+      </div>
+    </div>
+
+    <script is:inline>
+      const registerServiceWorker = async () => {
+        if ("serviceWorker" in navigator) {
+          try {
+            const registration = await navigator.serviceWorker.register("/sw.js", {
+              scope: "/bookmarks",
+            });
+            if (registration.installing) {
+              console.log("Service worker installing");
+            } else if (registration.waiting) {
+              console.log("Service worker installed");
+            } else if (registration.active) {
+              console.log("Service worker active");
+            }
+            console.log("The scope of the service worker is " + registration.scope);
+          } catch (error) {
+            console.error(`Registration failed with ${error}`);
+          }
+        }
+      };
+
+      registerServiceWorker();
+    </script>
+  </body>
+</html>

@@ -42,8 +42,32 @@ const cacheFirst = async ({ request, preloadResponsePromise }) => {
   return responseFromNetwork;
 };
 
+const networkFirst = async ({ request, preloadResponsePromise }) => {
+  try {
+    // try fetch
+    const responseFromNetwork = await fetch(request);
+
+    // success -> put in cache
+    putInCache(request, responseFromNetwork.clone());
+
+    // success -> respond
+    return responseFromNetwork;
+  } catch (error) {
+    console.warn("Network request failed; trying to serve from cache:", error);
+
+    // fail -> respond with cache
+    const responseFromCache = await caches.match(request);
+    if (responseFromCache) {
+      return responseFromCache;
+    }
+
+    // If the resource is not in the cache, return a fallback (could be an error response or a fallback resource)
+    return new Response("Network error", { status: 408 });
+  }
+};
+
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    cacheFirst({ request: event.request, preloadResponsePromise: event.preloadResponse })
+    networkFirst({ request: event.request, preloadResponsePromise: event.preloadResponse })
   );
 });
