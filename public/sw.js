@@ -5,7 +5,7 @@ const addResourcesToCache = async (resources) => {
 };
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(addResourcesToCache(["/bookmarks", "/bookmarks/bookmarks"]));
+  event.waitUntil(addResourcesToCache(["/bookmarks/", "/bookmarks/bookmarks"]));
   // console.log("Service Worker finished installing");
 });
 
