@@ -2,25 +2,33 @@
 
 ---
 
-<div class="sticky top-32 mr-5 mt-52 flex flex-col items-end gap-4 self-start">
-  <div class="h-16 w-16 overflow-hidden border-2 border-black">a profile photo</div>
-
-  <div class="flex flex-col items-end">
+<div
+  class="flex gap-4 border-b-4 border-black bg-[rgba(242,235,252,0.5)] p-2 md:sticky md:top-32 md:col-span-2 md:mr-5 md:mt-52 md:flex-col md:items-end md:self-start md:border-b-0 md:bg-transparent md:p-0"
+>
+  <div class="flex flex-col md:items-end">
+    <div class="h-20 w-20 overflow-hidden border-2 border-black">a profile photo</div>
     <p>
-      <b><h1 class="text-3xl">Aromia</h1></b>
-    </p>
-
-    <p class="hidden">
-      <a href="https://about.arom1a.com">About</a>
+      <b><h1 class="text-2xl md:text-3xl">Aromia</h1></b>
     </p>
   </div>
 
-  <div class="flex flex-col items-end">
-    <p><a href="/" class="text-blue-400 hover:text-blue-500">Home</a></p>
-    <p><a href="/blogs" class="text-blue-400 hover:text-blue-500">Blogs</a></p>
-    <p><a href="/photos" class="text-blue-400 hover:text-blue-500">Photo Collection</a></p>
-    <p><a href="/covers" class="text-blue-400 hover:text-blue-500">Cover Collection</a></p>
-    <p><a href="/friends" class="text-blue-400 hover:text-blue-500">Friends</a></p>
-    <p><a href="/bookmarks" class="text-blue-400 hover:text-blue-500">Bookmarks</a></p>
+  <div class="mt-auto flex flex-col gap-2">
+    <div class="flex gap-4 text-xl md:flex-col md:items-end md:gap-0">
+      <p><a href="/" class="text-blue-400 hover:text-blue-500">Home</a></p>
+      <p class="hidden">
+        <a href="https://about.arom1a.com" class="text-blue-400 hover:text-blue-500">About</a>
+      </p>
+    </div>
+
+    <div class="flex gap-2 md:flex-col md:items-end md:gap-0">
+      <p><a href="/blogs" class="text-blue-400 hover:text-blue-500">Blogs</a></p>
+      <p><a href="/photos" class="text-blue-400 hover:text-blue-500">Photo Collection</a></p>
+      <p><a href="/covers" class="text-blue-400 hover:text-blue-500">Cover Collection</a></p>
+    </div>
+
+    <div class="flex gap-2 text-lg md:flex-col md:items-end md:gap-0">
+      <p><a href="/friends" class="text-blue-400 hover:text-blue-500">Friends</a></p>
+      <p><a href="/bookmarks" class="text-blue-400 hover:text-blue-500">Bookmarks</a></p>
+    </div>
   </div>
 </div>

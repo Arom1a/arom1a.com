@@ -12,15 +12,13 @@ import Navbar from "../components/Navbar.astro";
   </head>
   <body>
     <div
-      class="fixed top-0 -z-10 h-screen w-screen bg-[radial-gradient(circle,rgba(256,256,256,1)_0_75%,rgba(243,118,203,.7)_100%)]"
+      class="fixed top-0 -z-[9999] h-screen w-screen bg-[radial-gradient(circle,rgba(256,256,256,1)_0_75%,rgba(243,118,203,.7)_100%)]"
     >
     </div>
-    <div class="grid grid-cols-7">
-      <div class="col-span-2">
-        <Navbar />
-      </div>
+    <div class="p-4 md:grid md:grid-cols-7 md:p-0 md:px-0">
+      <Navbar />
 
-      <div class="col-span-3 bg-[rgba(136,57,239,0.1)] p-4">
+      <div class="bg-[rgba(242,235,252)] p-4 md:col-span-3 md:min-h-screen">
         <!-- <div class="col-span-3 border-2 border-black"> -->
         <slot />
       </div>
