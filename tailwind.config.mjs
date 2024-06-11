@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        backgroundMain: "rgba(var(--backgroundMain))",
-        backgroundSurrounding: "rgba(var(--backgroundSurrounding))",
+        bgMain: "rgba(var(--bgMain))",
+        bgSurrounding: "rgba(var(--bgSurrounding))",
         primary: "rgba(var(--primary))",
         textPrimary: "rgba(var(--textPrimary))",
         linkPrimary: "rgba(var(--linkPrimary))",
