@@ -3,7 +3,9 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="prose prose-indigo">
+  <div
+    class="prose-headings:text-textPrimary hover:prose-a:text-linkHover prose-a:text-linkPrimary prose"
+  >
     <slot />
   </div>
 </BaseLayout>

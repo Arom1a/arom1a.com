@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.light {
+  --backgroundMain: 256, 256, 256;
+  --backgroundSurrounding: 243, 118, 203;
+  --primary: 242, 235, 252;
+  --textPrimary: 0, 0, 0;
+  --linkPrimary: 112, 163, 243;
+  --linkHover: 78, 128, 238;
+}
+
+.dark {
+  --backgroundMain: 0, 0, 0;
+  --backgroundSurrounding: 46, 40, 46;
+  --primary: 56, 48, 66;
+  --textPrimary: 256, 256, 256;
+  --linkPrimary: 112, 163, 243;
+  --linkHover: 78, 128, 238;
+}

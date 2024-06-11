@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import CornerButton from "../components/CornerButton.astro";
 ---
 
 <html lang="en">
@@ -8,21 +9,24 @@ import Navbar from "../components/Navbar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/global.css" />
     <title>Aromia</title>
   </head>
   <body>
     <div
-      class="fixed top-0 -z-[9999] h-screen w-screen bg-[radial-gradient(circle,rgba(256,256,256,1)_0_75%,rgba(243,118,203,.7)_100%)]"
+      class="fixed top-0 -z-[9999] h-screen w-screen bg-[radial-gradient(circle,rgba(var(--backgroundMain),1)_0_75%,rgba(var(--backgroundSurrounding),.7)_100%)]"
     >
     </div>
-    <div class="p-4 md:grid md:grid-cols-7 md:p-0 md:px-0">
+
+    <div class="p-4 md:grid md:grid-cols-8 md:p-0 md:px-0">
       <Navbar />
 
-      <div class="bg-[rgba(242,235,252)] p-4 md:col-span-3 md:min-h-screen">
-        <!-- <div class="col-span-3 border-2 border-black"> -->
+      <div class="bg-primary p-4 md:col-span-3 md:min-h-screen">
         <slot />
       </div>
     </div>
+
+    <CornerButton />
 
     <script is:inline>
       const registerServiceWorker = async () => {
