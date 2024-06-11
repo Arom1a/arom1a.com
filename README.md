@@ -4,7 +4,12 @@ My blog website.
 
 TODO:
 
-- [ ] dark theme
-- [ ] dark theme toggle
+- [x] dark theme
+- [x] dark theme toggle
 - [ ] rearrange the bookmarks
-- [ ] offline cache for bookmarks
+- [x] offline cache for bookmarks
+- [ ] Home description
+- [ ] Blog layout
+- [ ] Photo layout
+- [ ] Music cover layout
+- [ ] Friends layout
