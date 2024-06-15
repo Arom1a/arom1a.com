@@ -142,6 +142,8 @@
 - [Awesome Selfhost](https://awesome-selfhosted.net/)
 - [CS Iceberg](https://suricrasia.online/iceberg/)
 - [Semantic Versioning](https://semver.org/)
+- [It-tools](https://it-tools.tech/)
+- [IndieHackers](https://www.indiehackers.site/)
 
 ### Artificial Intelligence
 
