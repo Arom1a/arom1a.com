@@ -77,7 +77,7 @@ const totalBlogNum = displayBlogEntries.length;
           {monthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
             <p>
               <a
-                href={`blogs/${entry.slug}`}
+                href={`/blogs/${entry.slug}`}
                 class={`text-xl ${entry.data.lackTranslation ? "text-purple-300" : ""}`}
               >
                 {entry.data.title}
