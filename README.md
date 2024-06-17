@@ -9,6 +9,7 @@ TODO:
 - [ ] rearrange the bookmarks
 - [x] offline cache for bookmarks
 - [ ] Home description
+  - [ ] Chinese version description
 - [x] Blog layout
   - [ ] Blog page cover image
 - [ ] Photo layout

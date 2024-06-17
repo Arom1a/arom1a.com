@@ -6,8 +6,7 @@ interface Props {
   language: "en" | "zh";
 }
 
-// const { language } = Astro.props;
-let language = "en";
+const { language } = Astro.props;
 
 const enBlogEntries = await getCollection("blogs", ({ slug }) => {
   return slug.startsWith("en/");
@@ -30,10 +29,20 @@ if (language == "en") {
   });
 
   console.log(displayBlogEntries);
+} else if (language == "zh") {
+  displayBlogEntries = zhBlogEntries;
+
+  const zhIds = zhBlogEntries.map((entry) => {
+    return entry.data.id;
+  });
+
+  enBlogEntries.forEach((entry) => {
+    if (!zhIds.includes(entry.data.id)) {
+      entry.data.lackTranslation = true;
+      displayBlogEntries.push(entry);
+    }
+  });
 }
-// else if (language == "zh") {
-//   displayBlogEntries = zhBlogEntries;
-// }
 
 const monthMapToEntry = new Map();
 displayBlogEntries.forEach((entry) => {
@@ -65,15 +74,15 @@ const totalBlogNum = displayBlogEntries.length;
       pubMonths.map((month) => (
         <li>
           <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
-          {monthMapToEntry.get(month).map((ee: (typeof enBlogEntries)[0]) => (
+          {monthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
             <p>
               <a
-                href={`blogs/${ee.slug}`}
-                class={`text-xl ${ee.data.lackTranslation ? "text-purple-300" : ""}`}
+                href={`blogs/${entry.slug}`}
+                class={`text-xl ${entry.data.lackTranslation ? "text-purple-300" : ""}`}
               >
-                {ee.data.title}
+                {entry.data.title}
               </a>
-              {ee.slug}
+              {entry.slug}
             </p>
           ))}
         </li>
