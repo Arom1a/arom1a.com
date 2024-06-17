@@ -1,0 +1,26 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blogs");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ContentLayout>
+  <div
+    class="prose prose-headings:text-textPrimary prose-p:text-textPrimary prose-a:text-linkPrimary hover:prose-a:text-linkHover"
+  >
+    <h1>
+      {entry.data.title}
+    </h1>
+    <Content />
+  </div>
+</ContentLayout>

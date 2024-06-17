@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  language: "en" | "zh";
+}
+
+// const { language } = Astro.props;
+let language = "en";
+
+const enBlogEntries = await getCollection("blogs", ({ slug }) => {
+  return slug.startsWith("en/");
+});
+const zhBlogEntries = await getCollection("blogs", ({ slug }) => {
+  return slug.startsWith("zh/");
+});
+
+let displayBlogEntries = enBlogEntries;
+if (language == "en") {
+  const enIds = enBlogEntries.map((entry) => {
+    return entry.data.id;
+  });
+
+  zhBlogEntries.forEach((entry) => {
+    if (!enIds.includes(entry.data.id)) {
+      entry.data.lackTranslation = true;
+      displayBlogEntries.push(entry);
+    }
+  });
+
+  console.log(displayBlogEntries);
+}
+// else if (language == "zh") {
+//   displayBlogEntries = zhBlogEntries;
+// }
+
+const monthMapToEntry = new Map();
+displayBlogEntries.forEach((entry) => {
+  const yearAndMonth = // return yyyymmdd
+    entry.data.pubDate.getFullYear().toString() +
+    (entry.data.pubDate.getMonth().toString().length < 2
+      ? "0" + (entry.data.pubDate.getMonth() + 1).toString()
+      : entry.data.pubDate.getMonth().toString());
+  const date =
+    entry.data.pubDate.getDate().toString().length < 2
+      ? "0" + entry.data.pubDate.getDate().toString()
+      : entry.data.pubDate.getDate().toString();
+
+  monthMapToEntry.set(
+    yearAndMonth,
+    monthMapToEntry.get(yearAndMonth) ? monthMapToEntry.get(yearAndMonth).concat(entry) : [entry]
+  );
+});
+
+const pubMonths = [...monthMapToEntry.keys()].sort((a, b) => b - a);
+
+const totalArticleNum = enBlogEntries.length + zhBlogEntries.length;
+const totalBlogNum = displayBlogEntries.length;
+---
+
+<BaseLayout>
+  <div>
+    {
+      pubMonths.map((month) => (
+        <li>
+          <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
+          {monthMapToEntry.get(month).map((ee: (typeof enBlogEntries)[0]) => (
+            <p>
+              <a
+                href={`blogs/${ee.slug}`}
+                class={`text-xl ${ee.data.lackTranslation ? "text-purple-300" : ""}`}
+              >
+                {ee.data.title}
+              </a>
+              {ee.slug}
+            </p>
+          ))}
+        </li>
+      ))
+    }
+  </div>
+</BaseLayout>
