@@ -1,3 +1,12 @@
+<button id="languageToggle" class="grid size-[30px] content-center">
+  <span id="enSign" style="grid-row: 1; grid-column: 1" class="m-auto text-2xl text-textPrimary"
+    >en</span
+  >
+  <span id="zhSign" style="grid-row: 1; grid-column: 1" class="m-auto text-2xl text-textPrimary"
+    >zh</span
+  >
+</button>
+
 <script is:inline>
   const lang = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("lang")) {
@@ -9,14 +18,27 @@
 
   window.localStorage.setItem("lang", lang);
 
+  let enSign = document.getElementById("enSign");
+  let zhSign = document.getElementById("zhSign");
+  let enList = document.getElementById("en-list");
+  let zhList = document.getElementById("zh-list");
+
   if (lang === "en") {
-    let zhList = document.getElementById("zh-list");
     if (zhList) zhList.classList.toggle("hidden");
+    zhSign.classList.toggle("hidden");
   } else {
-    let enList = document.getElementById("en-list");
     if (enList) enList.classList.toggle("hidden");
+    enSign.classList.toggle("hidden");
   }
 
-  //const handleLangEnClick = () => { };
-  //const handleLangZhClick = () => { };
+  const handleLangClick = () => {
+    let changeLang = localStorage.getItem("lang") === "en" ? "zh" : "en";
+    localStorage.setItem("lang", changeLang);
+    if (zhList) zhList.classList.toggle("hidden");
+    zhSign.classList.toggle("hidden");
+    if (enList) enList.classList.toggle("hidden");
+    enSign.classList.toggle("hidden");
+  };
+
+  document.getElementById("languageToggle").addEventListener("click", handleLangClick);
 </script>
