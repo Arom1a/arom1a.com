@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import profPhoto from "../images/aromia.png";
+
+const pathname = new URL(Astro.request.url).pathname;
+console.log(pathname);
 ---
 
 <div
@@ -15,21 +18,57 @@ import profPhoto from "../images/aromia.png";
 
   <div class="mt-auto flex flex-col gap-2">
     <div class="flex gap-4 text-xl md:flex-col md:items-end md:gap-0">
-      <p><a href="/" class="text-linkPrimary hover:text-linkHover">Home</a></p>
+      <p>
+        <a
+          href="/"
+          class={`text-linkPrimary hover:text-linkHover ${pathname === "/" ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Home</a
+        >
+      </p>
       <p class="hidden">
-        <a href="https://about.arom1a.com" class="text-linkPrimary hover:text-linkHover">About</a>
+        <a href="https://about.arom1a.com" class={`text-linkPrimary hover:text-linkHover`}>About</a>
       </p>
     </div>
 
     <div class="flex gap-2 md:flex-col md:items-end md:gap-0">
-      <p><a href="/blogs" class="text-linkPrimary hover:text-linkHover">Blogs</a></p>
-      <p><a href="/photos" class="text-linkPrimary hover:text-linkHover">Photo Collection</a></p>
-      <p><a href="/covers" class="text-linkPrimary hover:text-linkHover">Cover Collection</a></p>
+      <p>
+        <a
+          href="/blogs"
+          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/blogs") ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Blogs</a
+        >
+      </p>
+      <p>
+        <a
+          href="/photos"
+          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/photos") ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Photo Collection</a
+        >
+      </p>
+      <p>
+        <a
+          href="/covers"
+          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/covers") ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Cover Collection</a
+        >
+      </p>
     </div>
 
     <div class="flex gap-2 text-lg md:flex-col md:items-end md:gap-0">
-      <p><a href="/friends" class="text-linkPrimary hover:text-linkHover">Friends</a></p>
-      <p><a href="/bookmarks" class="text-linkPrimary hover:text-linkHover">Bookmarks</a></p>
+      <p>
+        <a
+          href="/friends"
+          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/friends") ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Friends</a
+        >
+      </p>
+      <p>
+        <a
+          href="/bookmarks"
+          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/bookmarks") ? "underline decoration-2 underline-offset-4" : ""}`}
+          >Bookmarks</a
+        >
+      </p>
     </div>
   </div>
 </div>
