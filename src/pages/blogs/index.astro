@@ -6,8 +6,6 @@ interface Props {
   language: "en" | "zh";
 }
 
-const { language } = Astro.props;
-
 const enBlogEntries = await getCollection("blogs", ({ slug }) => {
   return slug.startsWith("en/");
 });
@@ -15,38 +13,31 @@ const zhBlogEntries = await getCollection("blogs", ({ slug }) => {
   return slug.startsWith("zh/");
 });
 
-let displayBlogEntries = enBlogEntries;
-if (language == "en") {
-  const enIds = enBlogEntries.map((entry) => {
-    return entry.data.id;
-  });
+let enDisplayBlogEntries = enBlogEntries;
+const enIds = enBlogEntries.map((entry) => {
+  return entry.data.id;
+});
+zhBlogEntries.forEach((entry) => {
+  if (!enIds.includes(entry.data.id)) {
+    entry.data.lackEnTranslation = true;
+    enDisplayBlogEntries.push(entry);
+  }
+});
 
-  zhBlogEntries.forEach((entry) => {
-    if (!enIds.includes(entry.data.id)) {
-      entry.data.lackTranslation = true;
-      displayBlogEntries.push(entry);
-    }
-  });
+let zhDisplayBlogEntries = zhBlogEntries;
+const zhIds = zhBlogEntries.map((entry) => {
+  return entry.data.id;
+});
+enBlogEntries.forEach((entry) => {
+  if (!zhIds.includes(entry.data.id)) {
+    entry.data.lackZhTranslation = true;
+    zhDisplayBlogEntries.push(entry);
+  }
+});
 
-  console.log(displayBlogEntries);
-} else if (language == "zh") {
-  displayBlogEntries = zhBlogEntries;
-
-  const zhIds = zhBlogEntries.map((entry) => {
-    return entry.data.id;
-  });
-
-  enBlogEntries.forEach((entry) => {
-    if (!zhIds.includes(entry.data.id)) {
-      entry.data.lackTranslation = true;
-      displayBlogEntries.push(entry);
-    }
-  });
-}
-
-const monthMapToEntry = new Map();
-displayBlogEntries.forEach((entry) => {
-  const yearAndMonth = // return yyyymmdd
+const enMonthMapToEntry = new Map();
+enDisplayBlogEntries.forEach((entry) => {
+  const yearAndMonth = // return yyyymm
     entry.data.pubDate.getFullYear().toString() +
     (entry.data.pubDate.getMonth().toString().length < 2
       ? "0" + (entry.data.pubDate.getMonth() + 1).toString()
@@ -56,29 +47,51 @@ displayBlogEntries.forEach((entry) => {
       ? "0" + entry.data.pubDate.getDate().toString()
       : entry.data.pubDate.getDate().toString();
 
-  monthMapToEntry.set(
+  enMonthMapToEntry.set(
     yearAndMonth,
-    monthMapToEntry.get(yearAndMonth) ? monthMapToEntry.get(yearAndMonth).concat(entry) : [entry]
+    enMonthMapToEntry.get(yearAndMonth)
+      ? enMonthMapToEntry.get(yearAndMonth).concat(entry)
+      : [entry]
   );
 });
 
-const pubMonths = [...monthMapToEntry.keys()].sort((a, b) => b - a);
+const zhMonthMapToEntry = new Map();
+zhDisplayBlogEntries.forEach((entry) => {
+  const yearAndMonth = // return yyyymm
+    entry.data.pubDate.getFullYear().toString() +
+    (entry.data.pubDate.getMonth().toString().length < 2
+      ? "0" + (entry.data.pubDate.getMonth() + 1).toString()
+      : entry.data.pubDate.getMonth().toString());
+  const date =
+    entry.data.pubDate.getDate().toString().length < 2
+      ? "0" + entry.data.pubDate.getDate().toString()
+      : entry.data.pubDate.getDate().toString();
+
+  zhMonthMapToEntry.set(
+    yearAndMonth,
+    zhMonthMapToEntry.get(yearAndMonth)
+      ? zhMonthMapToEntry.get(yearAndMonth).concat(entry)
+      : [entry]
+  );
+});
+
+const pubMonths = [...enMonthMapToEntry.keys()].sort((a, b) => b - a);
 
 const totalArticleNum = enBlogEntries.length + zhBlogEntries.length;
-const totalBlogNum = displayBlogEntries.length;
+const totalBlogNum = enDisplayBlogEntries.length;
 ---
 
 <BaseLayout>
-  <div>
+  <ul id="en-list">
     {
       pubMonths.map((month) => (
         <li>
           <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
-          {monthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
+          {enMonthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
             <p>
               <a
                 href={`/blogs/${entry.slug}`}
-                class={`text-xl ${entry.data.lackTranslation ? "text-purple-300" : ""}`}
+                class={`text-xl ${entry.data.lackEnTranslation ? "text-purple-300" : ""}`}
               >
                 {entry.data.title}
               </a>
@@ -88,5 +101,26 @@ const totalBlogNum = displayBlogEntries.length;
         </li>
       ))
     }
-  </div>
+  </ul>
+
+  <ul id="zh-list">
+    {
+      pubMonths.map((month) => (
+        <li>
+          <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
+          {zhMonthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
+            <p>
+              <a
+                href={`/blogs/${entry.slug}`}
+                class={`text-xl ${entry.data.lackZhTranslation ? "text-purple-300" : ""}`}
+              >
+                {entry.data.title}
+              </a>
+              {entry.slug}
+            </p>
+          ))}
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>

@@ -1,0 +1,22 @@
+<script is:inline>
+  const lang = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("lang")) {
+      return localStorage.getItem("lang");
+    }
+    //if (user device language){}
+    return "en";
+  })();
+
+  window.localStorage.setItem("lang", lang);
+
+  if (lang === "en") {
+    let zhList = document.getElementById("zh-list");
+    if (zhList) zhList.classList.toggle("hidden");
+  } else {
+    let enList = document.getElementById("en-list");
+    if (enList) enList.classList.toggle("hidden");
+  }
+
+  //const handleLangEnClick = () => { };
+  //const handleLangZhClick = () => { };
+</script>
