@@ -2,8 +2,23 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-interface Props {
-  language: "en" | "zh";
+function numToMonth(num: string) {
+  let map = [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May.",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sep.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
+
+  return map[parseInt(num) - 1];
 }
 
 const enBlogEntries = await getCollection("blogs", ({ slug }) => {
@@ -12,6 +27,7 @@ const enBlogEntries = await getCollection("blogs", ({ slug }) => {
 const zhBlogEntries = await getCollection("blogs", ({ slug }) => {
   return slug.startsWith("zh/");
 });
+const totalArticleNum = enBlogEntries.length + zhBlogEntries.length;
 
 let enDisplayBlogEntries = enBlogEntries;
 const enIds = enBlogEntries.map((entry) => {
@@ -77,7 +93,6 @@ zhDisplayBlogEntries.forEach((entry) => {
 
 const pubMonths = [...enMonthMapToEntry.keys()].sort((a, b) => b - a);
 
-const totalArticleNum = enBlogEntries.length + zhBlogEntries.length;
 const totalBlogNum = enDisplayBlogEntries.length;
 ---
 
@@ -85,18 +100,24 @@ const totalBlogNum = enDisplayBlogEntries.length;
   <ul id="en-list">
     {
       pubMonths.map((month) => (
-        <li>
-          <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
+        <li class="mb-3">
+          <div class="text-textTheme flex items-baseline">
+            <div class="mr-2 text-2xl">{month.slice(0, 4)}</div>
+            <div class="">{numToMonth(month.slice(5, 6))}</div>
+          </div>
+
           {enMonthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
-            <p>
-              <a
-                href={`/blogs/${entry.slug}`}
-                class={`text-xl ${entry.data.lackEnTranslation ? "text-purple-300" : ""}`}
-              >
+            <div
+              class={`flex items-baseline ${entry.data.lackEnTranslation ? "text-slate-600" : "text-textPrimary"}`}
+            >
+              <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                 {entry.data.title}
               </a>
-              {entry.slug}
-            </p>
+              <div
+                class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackEnTranslation ? "border-slate-600" : "border-textPrimary"}`}
+              />
+              <span class="">{entry.data.pubDate.toDateString().slice(4, 10)}</span>
+            </div>
           ))}
         </li>
       ))
@@ -106,21 +127,32 @@ const totalBlogNum = enDisplayBlogEntries.length;
   <ul id="zh-list">
     {
       pubMonths.map((month) => (
-        <li>
-          <div class="monthdiv(year) text-3xl text-blue-400">{month}</div>
+        <li class="mb-3">
+          <div class="text-textTheme flex items-baseline">
+            <div class="mr-2 text-2xl">{month.slice(0, 4)}</div>
+            <div class="">{numToMonth(month.slice(5, 6))}</div>
+          </div>
+
           {zhMonthMapToEntry.get(month).map((entry: (typeof enBlogEntries)[0]) => (
-            <p>
-              <a
-                href={`/blogs/${entry.slug}`}
-                class={`text-xl ${entry.data.lackZhTranslation ? "text-purple-300" : ""}`}
-              >
+            <div
+              class={`flex items-baseline ${entry.data.lackZhTranslation ? "text-slate-600" : "text-textPrimary"}`}
+            >
+              <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                 {entry.data.title}
               </a>
-              {entry.slug}
-            </p>
+              <div
+                class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackZhTranslation ? "border-slate-600" : "border-textPrimary"}`}
+              />
+              <span class="">{entry.data.pubDate.toDateString().slice(4, 10)}</span>
+            </div>
           ))}
         </li>
       ))
     }
   </ul>
+
+  <div class="mt-10 flex justify-between text-gray-500">
+    <div>Total article count: {totalArticleNum}</div>
+    <div>Total blog count: {totalBlogNum}</div>
+  </div>
 </BaseLayout>

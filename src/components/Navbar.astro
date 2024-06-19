@@ -16,12 +16,12 @@ console.log(pathname);
     </p>
   </div>
 
-  <div class="mt-auto flex flex-col gap-2">
+  <div class="text-textTheme mt-auto flex flex-col gap-2">
     <div class="flex gap-4 text-xl md:flex-col md:items-end md:gap-0">
       <p>
         <a
           href="/"
-          class={`text-linkPrimary hover:text-linkHover ${pathname === "/" ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname === "/" ? "underline decoration-2 underline-offset-4" : ""}`}
           >Home</a
         >
       </p>
@@ -34,21 +34,21 @@ console.log(pathname);
       <p>
         <a
           href="/blogs"
-          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/blogs") ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname.startsWith("/blogs") ? "underline decoration-2 underline-offset-4" : ""}`}
           >Blogs</a
         >
       </p>
       <p>
         <a
           href="/photos"
-          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/photos") ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname.startsWith("/photos") ? "underline decoration-2 underline-offset-4" : ""}`}
           >Photo Collection</a
         >
       </p>
       <p>
         <a
           href="/covers"
-          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/covers") ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname.startsWith("/covers") ? "underline decoration-2 underline-offset-4" : ""}`}
           >Cover Collection</a
         >
       </p>
@@ -58,14 +58,14 @@ console.log(pathname);
       <p>
         <a
           href="/friends"
-          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/friends") ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname.startsWith("/friends") ? "underline decoration-2 underline-offset-4" : ""}`}
           >Friends</a
         >
       </p>
       <p>
         <a
           href="/bookmarks"
-          class={`text-linkPrimary hover:text-linkHover ${pathname.startsWith("/bookmarks") ? "underline decoration-2 underline-offset-4" : ""}`}
+          class={`hover:text-textThemeEnphasize ${pathname.startsWith("/bookmarks") ? "underline decoration-2 underline-offset-4" : ""}`}
           >Bookmarks</a
         >
       </p>

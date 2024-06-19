@@ -6,7 +6,12 @@
   --bgMain: 256, 256, 256;
   --bgSurrounding: 152, 132, 181;
   --primary: 242, 235, 252;
+  --textThemeEnphasize: 87, 52, 159;
+  --textTheme: 147, 112, 219;
+  --textThemeDim: ;
+  --textDim: ;
   --textPrimary: 0, 0, 0;
+  --textBright: ;
   --linkPrimary: 112, 163, 243;
   --linkHover: 78, 128, 238;
 }
@@ -15,7 +20,12 @@
   --bgMain: 0, 0, 0;
   --bgSurrounding: 63, 50, 82;
   --primary: 27, 20, 41;
+  --textThemeEnphasize: 256, 216, 256;
+  --textTheme: 224, 176, 255;
+  --textThemeDim: ;
+  --textEnphasize: ;
   --textPrimary: 256, 256, 256;
+  --textDim: ;
   --linkPrimary: 112, 163, 243;
   --linkHover: 78, 128, 238;
 }

@@ -15,6 +15,7 @@ TODO:
 - [x] Blog layout
   - [ ] Blog page cover image
   - [ ] Blog color legend
+  - [ ] Sort by date
 - [ ] Photo layout
 - [ ] Music cover layout
 - [ ] Friends layout
