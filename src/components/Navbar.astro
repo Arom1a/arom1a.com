@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import profPhoto from "../images/aromia.png";
 
 const pathname = new URL(Astro.request.url).pathname;
-console.log(pathname);
+// console.log(pathname);
 ---
 
 <div
@@ -16,7 +16,7 @@ console.log(pathname);
     </p>
   </div>
 
-  <div class="text-textTheme mt-auto flex flex-col gap-2">
+  <div class="mt-auto flex flex-col gap-2 text-textTheme">
     <div class="flex gap-4 text-xl md:flex-col md:items-end md:gap-0">
       <p>
         <a
