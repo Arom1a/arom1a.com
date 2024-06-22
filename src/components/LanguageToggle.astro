@@ -22,21 +22,27 @@
   let zhSign = document.getElementById("zhSign");
   let enList = document.getElementById("en-list");
   let zhList = document.getElementById("zh-list");
+  let enDes = document.getElementById("enDes");
+  let zhDes = document.getElementById("zhDes");
 
   if (lang === "en") {
     if (zhList) zhList.classList.toggle("hidden");
+    if (zhDes) zhDes.classList.toggle("hidden");
     zhSign.classList.toggle("hidden");
   } else {
     if (enList) enList.classList.toggle("hidden");
     enSign.classList.toggle("hidden");
+    if (enDes) enDes.classList.toggle("hidden");
   }
 
   const handleLangClick = () => {
     let changeLang = localStorage.getItem("lang") === "en" ? "zh" : "en";
     localStorage.setItem("lang", changeLang);
     if (zhList) zhList.classList.toggle("hidden");
+    if (zhDes) zhDes.classList.toggle("hidden");
     zhSign.classList.toggle("hidden");
     if (enList) enList.classList.toggle("hidden");
+    if (enDes) enDes.classList.toggle("hidden");
     enSign.classList.toggle("hidden");
   };
 
