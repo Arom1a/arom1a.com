@@ -89,6 +89,7 @@
 - [Blessed Rust](https://blessed.rs)
 - [Rust in 3 Days](https://google.github.io/comprehensive-rust/)
 - [Algorithms in Rust](https://github.com/TheAlgorithms/Rust)
+- [Read Rust](https://readrust.net/)
 
 ## Coding
 
