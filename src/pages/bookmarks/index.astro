@@ -1,11 +1,11 @@
 ---
 import { getEntry } from "astro:content";
-import BookmarkLayout from "../../layouts/BookmarkLayout.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
 
 const bookmarks = await getEntry("bookmarks", "bookmarks");
 const { Content } = await bookmarks.render();
 ---
 
-<BookmarkLayout>
+<ContentLayout>
   <Content />
-</BookmarkLayout>
+</ContentLayout>

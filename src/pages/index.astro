@@ -1,14 +1,57 @@
 ---
+import { Image } from "astro:assets";
+import banner from "../images/banner.jpg";
 import ContentLayout from "../layouts/ContentLayout.astro";
 ---
 
 <ContentLayout>
+  <Image src={banner} alt="banner" class="m-0 h-52" />
+  <h1 class="my-2">Aromia ≡/ᐠ. ˍ .ᐟ\≡</h1>
   <div id="zhDes">
-    <p class="text-textPrimary">
+    <p>
+      嗨嗨嗨嗨，这里是一只 Aromia～ <br />
+      请用中文 / English / 日本語（勉強ing）和我聊天！ <br />
+      研究数学 & <a href="https://github.com/Arom1a">计算机</a>、是个音游玩家、炒鸡
+      <a href="blogs/zh/violet-collection">喜欢紫色</a>。
+    </p>
+
+    <p>
+      放一个匿名 Q&A：
+      <a href="https://www.askbox.ink/box/uu/arom1a">Askbox</a>，
+      <br />
+
+      或者在这留个言吧：
+      <a href="https://ngl.link/arom1a">ngl</a>、
+      <a href="https://confess.ngl.link/arom1a">confession</a>、
+      <a href="https://3words.ngl.link/arom1a">3 words</a>。
+    </p>
+
+    <p>
+      <b> 永存感激，善以待人。 </b>
     </p>
   </div>
+
   <div id="enDes">
-    <p class="text-textPrimary">
+    <p>
+      Hiiii, this is Aromia~ <br />
+      Let's chat in 中文 / English / 日本語（勉強ing）! <br />
+      I'm a math & <a href="https://github.com/Arom1a">CS lover</a>, a MUG player, and a
+      <a href="blogs/en/violet-collection">violet enthutheastic</a>.
+    </p>
+
+    <p>
+      Anonymous Q&A here:
+      <a href="https://www.askbox.ink/box/uu/arom1a">Askbox</a>,
+      <br />
+
+      or leave a message here:
+      <a href="https://ngl.link/arom1a">ngl</a>,
+      <a href="https://confess.ngl.link/arom1a">confession</a>,
+      <a href="https://3words.ngl.link/arom1a">3 words</a>.
+    </p>
+
+    <p>
+      <b> Be gracious, be kind. </b>
     </p>
   </div>
 </ContentLayout>
