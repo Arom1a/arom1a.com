@@ -18,7 +18,7 @@ function numToMonth(num: string) {
     "Dec.",
   ];
 
-  return map[parseInt(num) - 1];
+  return map[parseInt(num)];
 }
 
 const enBlogEntries = await getCollection("blogs", ({ slug }) => {
@@ -60,7 +60,7 @@ enDisplayBlogEntries.forEach((entry) => {
   const yearAndMonth = // return yyyymm
     entry.data.pubDate.getFullYear().toString() +
     (entry.data.pubDate.getMonth().toString().length < 2
-      ? "0" + (entry.data.pubDate.getMonth() + 1).toString()
+      ? "0" + entry.data.pubDate.getMonth().toString()
       : entry.data.pubDate.getMonth().toString());
   const date =
     entry.data.pubDate.getDate().toString().length < 2
@@ -79,7 +79,7 @@ zhDisplayBlogEntries.forEach((entry) => {
   const yearAndMonth = // return yyyymm
     entry.data.pubDate.getFullYear().toString() +
     (entry.data.pubDate.getMonth().toString().length < 2
-      ? "0" + (entry.data.pubDate.getMonth() + 1).toString()
+      ? "0" + entry.data.pubDate.getMonth().toString()
       : entry.data.pubDate.getMonth().toString());
   const date =
     entry.data.pubDate.getDate().toString().length < 2
@@ -93,6 +93,8 @@ zhDisplayBlogEntries.forEach((entry) => {
   }
 });
 
+console.log(enMonthMapToEntry);
+
 const pubMonths = [...enMonthMapToEntry.keys()].sort((a, b) => parseInt(b) - parseInt(a));
 
 const totalBlogNum = enDisplayBlogEntries.length;
@@ -105,7 +107,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
         <li class="mb-3">
           <div class="flex items-baseline text-textTheme">
             <div class="mr-2 text-2xl">{month.slice(0, 4)}</div>
-            <div class="">{numToMonth(month.slice(5, 6))}</div>
+            <div class="">{numToMonth(month.slice(4, 6))}</div>
           </div>
 
           {enMonthMapToEntry
@@ -135,7 +137,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
         <li class="mb-3">
           <div class="flex items-baseline text-textTheme">
             <div class="mr-2 text-2xl">{month.slice(0, 4)}</div>
-            <div class="">{numToMonth(month.slice(5, 6))}</div>
+            <div class="">{numToMonth(month.slice(4, 6))}</div>
           </div>
 
           {zhMonthMapToEntry
