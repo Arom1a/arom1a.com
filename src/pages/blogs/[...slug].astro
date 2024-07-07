@@ -18,9 +18,7 @@ const { Content } = await entry.render();
   <div
     class="prose prose-headings:text-textPrimary prose-p:text-textPrimary prose-a:text-linkPrimary hover:prose-a:text-linkHover"
   >
-    <h1>
-      {entry.data.title}
-    </h1>
+    <h1 class="my-2">{entry.data.title}</h1>
     <Content />
   </div>
 </ContentLayout>
