@@ -1,0 +1,14 @@
+<button>
+  <span
+    onclick="toTop()"
+    id="toTopBtn"
+    style="grid-row: 1; grid-column: 1"
+    class="m-auto text-2xl text-textPrimary">↑</span
+  >
+</button>
+
+<script is:inline>
+  function toTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
