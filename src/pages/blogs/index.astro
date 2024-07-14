@@ -93,8 +93,6 @@ zhDisplayBlogEntries.forEach((entry) => {
   }
 });
 
-console.log(enMonthMapToEntry);
-
 const pubMonths = [...enMonthMapToEntry.keys()].sort((a, b) => parseInt(b) - parseInt(a));
 
 const totalBlogNum = enDisplayBlogEntries.length;
@@ -112,7 +110,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
 
           {enMonthMapToEntry
             .get(month)
-            ?.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime())
+            ?.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
             .map((entry: (typeof enBlogEntries)[0]) => (
               <div
                 class={`flex items-baseline ${entry.data.lackEnTranslation ? "text-textDim" : "text-textPrimary"}`}
@@ -142,7 +140,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
 
           {zhMonthMapToEntry
             .get(month)
-            ?.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime())
+            ?.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
             .map((entry: (typeof enBlogEntries)[0]) => (
               <div
                 class={`flex items-baseline ${entry.data.lackZhTranslation ? "text-textDim" : "text-textPrimary"}`}
