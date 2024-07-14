@@ -9,7 +9,7 @@
   --textThemeEnphasize: 87, 52, 159;
   --textTheme: 147, 112, 219;
   --textThemeDim: ;
-  --textDim: ;
+  --textDim: 153, 153, 153, 1; /* hsla(0, 0%, 60%, 1) */
   --textPrimary: 0, 0, 0;
   --textBright: ;
   --linkPrimary: 112, 163, 243;
@@ -25,7 +25,7 @@
   --textThemeDim: ;
   --textEnphasize: ;
   --textPrimary: 256, 256, 256;
-  --textDim: ;
+  --textDim: 102, 102, 102, 1; /* hsla(0, 0%, 40%, 1) */
   --linkPrimary: 112, 163, 243;
   --linkHover: 78, 128, 238;
 }

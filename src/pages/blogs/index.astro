@@ -115,13 +115,13 @@ const totalBlogNum = enDisplayBlogEntries.length;
             ?.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime())
             .map((entry: (typeof enBlogEntries)[0]) => (
               <div
-                class={`flex items-baseline ${entry.data.lackEnTranslation ? "text-slate-600" : "text-textPrimary"}`}
+                class={`flex items-baseline ${entry.data.lackEnTranslation ? "text-textDim" : "text-textPrimary"}`}
               >
                 <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                   {entry.data.title}
                 </a>
                 <div
-                  class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackEnTranslation ? "border-slate-600" : "border-textPrimary"}`}
+                  class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackEnTranslation ? "border-textDim" : "border-textPrimary"}`}
                 />
                 <span class="">{entry.data.pubDate.toDateString().slice(4, 10)}</span>
               </div>
@@ -145,13 +145,13 @@ const totalBlogNum = enDisplayBlogEntries.length;
             ?.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime())
             .map((entry: (typeof enBlogEntries)[0]) => (
               <div
-                class={`flex items-baseline ${entry.data.lackZhTranslation ? "text-slate-600" : "text-textPrimary"}`}
+                class={`flex items-baseline ${entry.data.lackZhTranslation ? "text-textDim" : "text-textPrimary"}`}
               >
                 <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                   {entry.data.title}
                 </a>
                 <div
-                  class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackZhTranslation ? "border-slate-600" : "border-textPrimary"}`}
+                  class={`mx-3 h-0 flex-grow border-b-2 border-dotted pt-4 ${entry.data.lackZhTranslation ? "border-textDim" : "border-textPrimary"}`}
                 />
                 <span class="">{entry.data.pubDate.toDateString().slice(4, 10)}</span>
               </div>
@@ -161,7 +161,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
     }
   </ul>
 
-  <div class="mt-10 flex justify-between text-gray-500">
+  <div class="mt-10 flex justify-between text-textDim">
     <div>Total article count: {totalArticleNum}</div>
     <div>Total blog count: {totalBlogNum}</div>
   </div>

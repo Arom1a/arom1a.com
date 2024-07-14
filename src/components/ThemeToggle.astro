@@ -40,12 +40,16 @@
     return "light";
   })();
 
+  let contentContainer = document.getElementById("content-container");
+
   if (theme === "light") {
     document.documentElement.classList.remove("dark");
     document.documentElement.classList.add("light");
+    if (contentContainer != null) contentContainer.classList.remove("prose-invert");
   } else {
     document.documentElement.classList.remove("light");
     document.documentElement.classList.add("dark");
+    if (contentContainer != null) contentContainer.classList.add("prose-invert");
   }
 
   window.localStorage.setItem("theme", theme);
@@ -54,6 +58,7 @@
     const docElement = document.documentElement;
     docElement.classList.toggle("dark");
     docElement.classList.toggle("light");
+    if (contentContainer != null) contentContainer.classList.toggle("prose-invert");
 
     const isDark = docElement.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
