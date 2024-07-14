@@ -1,6 +1,6 @@
 # arom1a.com
 
-My blog website.
+My virtual cottage.
 
 TODO:
 
@@ -9,13 +9,15 @@ TODO:
 - [ ] rearrange the bookmarks
 - [x] offline cache for bookmarks
 - [x] Nav link highlight
-- [ ] Home description
-  - [ ] Home banner
-  - [ ] Chinese version description
+- [x] Home description
+  - [x] Home banner
+  - [x] Chinese version description
 - [x] Blog layout
   - [ ] Blog page cover image
-  - [ ] Blog color legend
-  - [ ] Sort by date
+  - [ ] opengraph for each post
+  - [ ] Blog color type legend
+  - [x] Sort by date
+  - [ ] Last revise date
 - [ ] Photo layout
 - [ ] Music cover layout
 - [ ] Friends layout

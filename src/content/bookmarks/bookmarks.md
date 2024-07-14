@@ -91,6 +91,8 @@
 - [Algorithms in Rust](https://github.com/TheAlgorithms/Rust)
 - [Read Rust](https://readrust.net/)
 
+- [teach-rs](https://github.com/trifectatechfoundation/teach-rs)
+
 ## Coding
 
 ### Frontend
@@ -153,7 +155,7 @@
 - [Civit AI](https://civitai.com/)
 - [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
-### Data Structions and Algorithms
+### Data Structures and Algorithms
 
 - [Visualgo](https://visualgo.net/en)
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
@@ -182,6 +184,7 @@
 - [Anime1](https://anime1.me/)
 - [FMHY](https://fmhy.net/)
 - [Hacker News](https://news.ycombinator.com/)
+- [MangaDex](https://mangadex.org/)
 
 ## Pictures
 
@@ -189,6 +192,8 @@
 - [Pixiv](https://www.pixiv.net/)
 - [Baidu Graph](https://graph.baidu.com/pcpage/index?tpl_from=pc/)
 - [Pixabay](https://pixabay.com/)
+- [Wallhaven](https://wallhaven.cc/)
+- [Sai2](https://sai.piv.ink/)
 
 ## Wiki
 
