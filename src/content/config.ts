@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
     title: z.string(),
     pubDate: z.date(),
     upDate: z.date(),
-    category: z.enum(["review", "thought"]),
+    category: z.enum(["note", "trivia", "lit", "thought", "review"]),
     lackEnTranslation: z.boolean().optional(),
     lackZhTranslation: z.boolean().optional(),
   }),
