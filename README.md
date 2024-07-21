@@ -2,6 +2,8 @@
 
 My virtual cottage.
 
+<https://arom1a.com>
+
 TODO:
 
 - [x] dark theme
@@ -9,6 +11,7 @@ TODO:
 - [ ] rearrange the bookmarks
 - [x] offline cache for bookmarks
 - [x] Nav link highlight
+- [ ] Select better fonts for both en & zh
 - [x] Home description
   - [x] Home banner
   - [x] Chinese version description
