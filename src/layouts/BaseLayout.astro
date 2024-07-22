@@ -7,14 +7,20 @@ const { title = "Aromia's Homepage" } = Astro.props;
 
 <html lang="en">
   <head>
-    <title>{title}</title>
     <meta charset="utf-8" />
+    <title>{title}</title>
     <meta name="description" content="Hiiii, this is Aromia~" />
     <meta name="keywords" content="aromia arom1a homepage blog" />
     <meta name="author" content="Aromia" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta name="og:type" content="website" />
+    <meta name="og:title" content={title} />
+    <meta name="og:url" content="https://arom1a.com" />
+    <meta name="og:description" content="Hiiii, this is Aromia~" />
+    <meta name="og:image" content="https://arom1a.com/aromia.png" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
