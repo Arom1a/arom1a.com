@@ -1,11 +1,13 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import CornerButton from "../components/CornerButton.astro";
+
+const { title = "Aromia's Homepage" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <title>Aromia</title>
+    <title>{title}</title>
     <meta charset="utf-8" />
     <meta name="description" content="Hiiii, this is Aromia~" />
     <meta name="keywords" content="aromia arom1a homepage blog" />
@@ -15,7 +17,7 @@ import CornerButton from "../components/CornerButton.astro";
     <meta name="generator" content={Astro.generator} />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Aromia's Home Page" />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:site:id" content="@arom1a" />
     <meta name="twitter:description" content="Hiiii, this is Aromia~" />
     <meta name="twitter:image" content="https://arom1a.com/aromia.png" />
