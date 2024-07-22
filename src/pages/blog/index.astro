@@ -21,10 +21,10 @@ function numToMonth(num: string) {
   return map[parseInt(num)];
 }
 
-const enBlogEntries = await getCollection("blogs", ({ slug }) => {
+const enBlogEntries = await getCollection("blog", ({ slug }) => {
   return slug.startsWith("en/");
 });
-const zhBlogEntries = await getCollection("blogs", ({ slug }) => {
+const zhBlogEntries = await getCollection("blog", ({ slug }) => {
   return slug.startsWith("zh/");
 });
 const totalArticleNum = enBlogEntries.length + zhBlogEntries.length;
@@ -115,7 +115,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
               <div
                 class={`flex items-baseline ${entry.data.lackEnTranslation ? "text-textDim" : "text-textPrimary"}`}
               >
-                <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
+                <a href={`/blog/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                   {entry.data.title}
                 </a>
                 <div
@@ -145,7 +145,7 @@ const totalBlogNum = enDisplayBlogEntries.length;
               <div
                 class={`flex items-baseline ${entry.data.lackZhTranslation ? "text-textDim" : "text-textPrimary"}`}
               >
-                <a href={`/blogs/${entry.slug}`} class="text-xl decoration-2 hover:underline">
+                <a href={`/blog/${entry.slug}`} class="text-xl decoration-2 hover:underline">
                   {entry.data.title}
                 </a>
                 <div

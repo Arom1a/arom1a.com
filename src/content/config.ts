@@ -20,5 +20,5 @@ const blogCollection = defineCollection({
 
 export const collections = {
   bookmarks: bookmarkCollection,
-  blogs: blogCollection,
+  blog: blogCollection,
 };
