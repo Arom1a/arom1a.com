@@ -12,9 +12,41 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const publishDate =
+  "" +
+  ((entry.data.pubDate.getMonth() + 1).toString().length < 2
+    ? "0" + (entry.data.pubDate.getMonth() + 1)
+    : entry.data.pubDate.getMonth() + 1) +
+  " / " +
+  (entry.data.pubDate.getDate().toString().length < 2
+    ? "0" + entry.data.pubDate.getDate()
+    : entry.data.pubDate.getDate()) +
+  " / " +
+  entry.data.pubDate.getFullYear();
+const lastUpDate =
+  "" +
+  ((entry.data.upDate.getMonth() + 1).toString().length < 2
+    ? "0" + (entry.data.upDate.getMonth() + 1)
+    : entry.data.upDate.getMonth() + 1) +
+  " / " +
+  (entry.data.upDate.getDate().toString().length < 2
+    ? "0" + entry.data.upDate.getDate()
+    : entry.data.upDate.getDate()) +
+  " / " +
+  entry.data.upDate.getFullYear();
 ---
 
 <ContentLayout title={entry.data.title}>
   <h1>{entry.data.title}</h1>
+  <div class="flex justify-between">
+    <div>
+      Publish data: {publishDate}
+    </div>
+
+    <div>
+      Last update: {lastUpDate}
+    </div>
+  </div>
   <Content />
 </ContentLayout>
