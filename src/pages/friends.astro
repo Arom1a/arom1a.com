@@ -1,8 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Constructing from "../components/Constructing.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
+
+import friend_data from "../images/friends/friends.json";
 ---
 
 <BaseLayout>
-  <Constructing />
+  <div class="prose prose-headings:text-textPrimary prose-h1:my-2">
+    <h1>Friends</h1>
+  </div>
+  <ul>
+    {
+      friend_data
+        .toSorted((a, b) => {
+          return a.display_name.charCodeAt(0) - b.display_name.charCodeAt(0); // TODO: more digits compare
+        })
+        .map(({ id, display_name, description, url }) => (
+          <li>
+            <a
+              href={url}
+              class="my-3 flex h-24 w-full gap-3 border-4 border-textTheme/20 bg-primary p-2 text-textPrimary backdrop-blur-2xl"
+            >
+              <div class="size-16 shrink-0 border-2 border-textPrimary"> {id} pic </div>
+              {/* // TODO: pic here */}
+              <div>
+                <b>
+                  <h3 class="-mt-1 text-xl text-linkPrimary hover:text-linkHover">
+                    {display_name}
+                  </h3>
+                </b>
+                <p>{description}</p>
+              </div>
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+
+  <div class="prose prose-p:text-textPrimary">
+    <p>Note: sorted in alphabatic order</p>
+  </div>
 </BaseLayout>

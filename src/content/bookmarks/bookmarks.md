@@ -7,13 +7,22 @@
 - [Zhihu Read Later](https://www.zhihu.com/collection/693108969)
 - [GitHub Stars](https://github.com/Arom1a?tab=stars)
 
-## General
+## College Application
+
+- [Bridge U](https://app.bridge-u.com/)
+- [Common App](https://www.commonapp.org/)
+- [UCAS](https://ucas.com/)
+
+## Learning
+
+General
 
 - [Marxists Archive](https://www.marxists.org/chinese/index.html/)
 - [zLibrary](https://singlelogin.re/)
 - [Library Genesis](https://libgen.li/index.php)
 - [Phind](https://www.phind.com/)
 - [ChatGPT](https://chat.openai.com/chat/)
+- [Claude](https://claude.ai/)
 - [QuillBot](https://quillbot.com/)
 - [Zhihu](https://www.zhihu.com/)
 - [Wolfram Alpha](https://www.wolframalpha.com/)
@@ -23,7 +32,7 @@
 - [Coursera](https://www.coursera.org/)
 - [Quizlet](https://quizlet.com/zh-cn/)
 
-## Competitive Programming
+Competitive Programming
 
 - [CSES Problem List](https://cses.fi/problemset/list/)
 - [USACO Training](https://train.usaco.org/)
@@ -31,29 +40,10 @@
 - [Rust Competitive Programming](https://rustp.org/)
 - [Neetcode](https://neetcode.io/courses)
 - [Advent of Code](https://adventofcode.com/)
+- [Visualgo](https://visualgo.net/en)
+- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
-## CMU
-
-- [Student Portal](https://apply-precollege.studentaffairs.cmu.edu/portal/student)
-- [Student Information Online](https://s3.andrew.cmu.edu/sio/mpa/)
-
-## Application
-
-- [Bridge U](https://app.bridge-u.com/)
-- [Common App](https://www.commonapp.org/)
-- [UCAS](https://ucas.com/)
-
-## English Learning
-
-- [新东方 TPO](https://liuxue.koolearn.com/toefl/)
-- [小站 TPO](http://top.zhan.com/toefl/)
-- [TOEFL](https://toefl.neea.cn/myHome/21469843/)
-
-- [Khan SAT](https://www.khanacademy.org/mission/sat/)
-- [CollegeBoard](https://satsuite.collegeboard.org/sat/practice-preparation/practice-tests/linear)
-- [Linggle](https://linggle.com/)
-
-## Mathematics
+Mathematics
 
 - [AoPS](https://artofproblemsolving.com/wiki/)
 - [Writer](https://writer.com/)
@@ -63,13 +53,13 @@
 - [SPSSpro](https://www.spsspro.com/)
 - [Cambridge Notes](https://dec41.user.srcf.net/notes/)
 
-## AP Courses
+AP Courses
 
 - [Collegeboard](https://www.collegeboard.org/)
 - [Crackap](https://www.crackap.com/)
 - [The Physics Hypertextbook](https://physics.info/)
 
-## Web and Software Security
+ Web and Software Security
 
 - [CTF Wiki](https://ctf-wiki.org/)
 - [Hack The Box](htts://www.hackthebox.com/)
@@ -79,8 +69,9 @@
 - [PWNABLE.KR](https://pwnable.kr/)
 - [PWNABLE.TW](https://pwnable.tw/)
 - [PicoCTF](https://picoctf.org)
+- [Reverse Engineering for Everyone](https://0xinfection.github.io/reversing/)
 
-## Rust
+ Rust
 
 - [Rust Official Book](https://doc.rust-lang.org/book/)
 - [Rust Brown Book](https://rust-book.cs.brown.edu/)
@@ -91,11 +82,16 @@
 - [Algorithms in Rust](https://github.com/TheAlgorithms/Rust)
 - [Read Rust](https://readrust.net/)
 
+- [Query.rs](https://query.rs/)
+- [lib.rs](https://lib.rs/)
+
 - [teach-rs](https://github.com/trifectatechfoundation/teach-rs)
 
-## Coding
+- [Embedded Rust](https://docs.rust-embedded.org/book/)
+- [Embedded Rust Discovery](https://docs.rust-embedded.org/discovery/)
+- [Embedded Rust Discovery Microbit](https://docs.rust-embedded.org/discovery/microbit/)
 
-### Frontend
+Frontend Mess
 
 - [Frontend Masters](https://frontendmasters.com/)
 - [The Modern JavaScript Tutorial](https://javascript.info/)
@@ -113,19 +109,14 @@
 - [Page Collective](https://pagecollective.com/)
 - [One Page Love](https://onepagelove.com/)
 - [the Valley of Code](https://thevalleyofcode.com/)
+- [Css Gradient](https://cssgradient.io/)
+- [Fancy Border Radius](https://9elements.github.io/fancy-border-radius/)
+- [Coolors](https://coolors.co/)
+- [Icones](https://icones.js.org/)
+- [Iconify](https://icon-sets.iconify.design/)
+- [YesIcon](https://yesicon.app/)
 
-### Cpp
-
-- [Cpp Primer](https://github.com/pezy/CppPrimer/)
-- [LearnCpp](https://www.learncpp.com/)
-
-### Python
-
-- [Python Books](https://pythonbooks.revolunet.com/)
-- [Python-100-Days](https://github.com/jackfrued/Python-100-Days)
-- [PythonChallenge](http://www.pythonchallenge.com)
-
-### All Languages
+Languages
 
 - [CS Self-learning](https://csdiy.wiki/)
 - [Exercism](https://exercism.org/)
@@ -135,7 +126,14 @@
 - [Developer Toolkit](https://toolkit.addy.codes/)
 - [Developer Roadmaps](https://roadmap.sh/)
 
-### Misc. (industrial)
+- [Cpp Primer](https://github.com/pezy/CppPrimer/)
+- [LearnCpp](https://www.learncpp.com/)
+
+- [Python Books](https://pythonbooks.revolunet.com/)
+- [Python-100-Days](https://github.com/jackfrued/Python-100-Days)
+- [PythonChallenge](http://www.pythonchallenge.com)
+
+Misc. (industrial)
 
 - [The Missing Semester](https://missing.csail.mit.edu/)
 - [Git Cheatsheet](https://cs.fyi/guide/git-cheatsheet/)
@@ -149,25 +147,36 @@
 - [It-tools](https://it-tools.tech/)
 - [IndieHackers](https://www.indiehackers.site/)
 
-### Artificial Intelligence
+Artificial Intelligence
 
 - [Hugging Face](https://huggingface.co/)
 - [Hugging Face Mirror](https://hf-mirror.com/)
 - [Civit AI](https://civitai.com/)
 - [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
-### Data Structures and Algorithms
-
-- [Visualgo](https://visualgo.net/en)
-- [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
-
-## Electrical Engineering
+ Electrical Engineering
 
 - [CPU Land](https://cpu.land/)
 - [JDL shop](https://www.szlcsc.com)
 - [半导小芯](https://www.semiee.com)
 - [All Data Sheet](https://www.alldatasheet.com)
 - [Learn About Circuits](https://www.allaboutcircuits.com/)
+
+ English
+
+- [新东方 TPO](https://liuxue.koolearn.com/toefl/)
+- [小站 TPO](http://top.zhan.com/toefl/)
+- [TOEFL](https://toefl.neea.cn/myHome/21469843/)
+- [Khan SAT](https://www.khanacademy.org/mission/sat/)
+- [CollegeBoard](https://satsuite.collegeboard.org/sat/practice-preparation/practice-tests/linear)
+- [Linggle](https://linggle.com/)
+
+ Japanese
+
+- [Kanji Dictionary](https://jitenon.com/)
+- [Anki](https://apps.ankiweb.net/)
+- [Sakubi Grammar](https://gohoneko.neocities.org/learn/anon/sakubi)
+- [Imabi Grammar](https://imabi.org/)
 
 ## Entertainment
 
@@ -180,14 +189,18 @@
 - [Maimai Int Ver.](https://maimai.sega.com/)
 - [CHUNITHM Int Ver.](https://chunithm.sega.com/)
 - [Chinese Arcades Map](https://map.bemanicn.com/)
-- [International Arcades Map](https://zenius-i-vanisher.com/v5.2/arcades.php/)
+- [International Arcades Map](https://zenius-i-vanisher.com/v5.2/arcades.php)
 - [Anix](https://anix.to/)
 - [Anime1](https://anime1.me/)
 - [FMHY](https://fmhy.net/)
 - [Hacker News](https://news.ycombinator.com/)
 - [MangaDex](https://mangadex.org/)
+- [xkcd](https://xkcd.com/)
+- [Explain xkcd](https://www.explainxkcd.com/)
 
-## Pictures
+## Tools
+
+ Pictures
 
 - [Saucenao](https://saucenao.com/)
 - [Pixiv](https://www.pixiv.net/)
@@ -196,7 +209,7 @@
 - [Wallhaven](https://wallhaven.cc/)
 - [Sai2](https://sai.piv.ink/)
 
-## Wiki
+ Wiki
 
 - [English Wiki](https://en.wikipedia.org/)
 - [Chinese Wiki](https://zh.wikipedia.org/)
@@ -207,34 +220,12 @@
 - [*Lobotomy Corp* Wiki](https://lobotomycorp.fandom.com/)
 - [*Don't Starve* Wiki](https://dontstarve.fandom.com/)
 
-## UI Design
-
-- [Icones](https://icones.js.org/)
-- [Iconify](https://icon-sets.iconify.design/)
-- [YesIcon](https://yesicon.app/)
-
-## Typing
+ Typing Practice
 
 - [Keybr](https://www.keybr.com/)
 - [Monkey Type](https://monkeytype.com/)
 
-## Blog
-
-- [Julia Evans](https://jvns.ca/)
-- [Wibus](https://www.wibus.ren/)
-- [AshenOne](https://ashenone66.cn/)
-- [Arisa](https://blog.arisa.moe/)
-- [Sukka](https://skk.moe/)
-- [Steven Lynn](https://blog.stv.lol/)
-- [Josh W Comeau](https://www.joshwcomeau.com/latest/)
-- [Niki](https://tonsky.me/)
-- [Brian's Comments](https://comments.bmartin.cc/)
-- [Web Dev Simplified Blog](https://blog.webdevsimplified.com/)
-- [Anthony Fu](https://antfu.me/)
-- [Astris](https://www.qaq.wiki/)
-- [Max Niederman](https://maxniederman.com/)
-
-## Netdisk
+ Netdisk
 
 - [Baidu Netdisk](https://pan.baidu.com 'NMSL')
 - [Weiyun](https://www.weiyun.com/)
@@ -244,10 +235,34 @@
 - [Huawei Cloud](https://cloud.huawei.com/home##/home/)
 - [Google Drive](https://drive.google.com/drive/u/0/home)
 
-## Datasets
+ Datasets
 
 - [Kaggle](https://www.kaggle.com/)
 - [Paper with Code](https://paperswithcode.com/)
 - [Roboflow](https://roboflow.com/)
 - [Mendeley](https://data.mendeley.com/)
 - [Google Dataset Search](https://datasetsearch.research.google.com/)
+
+## Blog
+
+en
+
+- [Julia Evans](https://jvns.ca/)
+- [Sukka](https://skk.moe/)
+- [Josh W Comeau](https://www.joshwcomeau.com/latest/)
+- [Niki](https://tonsky.me/)
+- [Brian's Comments](https://comments.bmartin.cc/)
+- [Web Dev Simplified Blog](https://blog.webdevsimplified.com/)
+- [Max Niederman](https://maxniederman.com/)
+
+zh
+
+- [Arisa](https://blog.arisa.moe/)
+- [Wibus](https://www.wibus.ren/)
+- [Anthony Fu](https://antfu.me/)
+- [Astris](https://www.qaq.wiki/)
+
+## Legacy
+
+- [Student Portal](https://apply-precollege.studentaffairs.cmu.edu/portal/student)
+- [Student Information Online](https://s3.andrew.cmu.edu/sio/mpa/)

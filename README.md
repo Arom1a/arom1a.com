@@ -8,7 +8,7 @@ TODO:
 
 - [x] dark theme
 - [x] dark theme toggle
-- [ ] rearrange the bookmarks
+- [x] rearrange the bookmarks
 - [x] offline cache for bookmarks
 - [x] Nav link highlight
 - [ ] Select better fonts for both en & zh
