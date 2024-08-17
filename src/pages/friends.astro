@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContentLayout from "../layouts/ContentLayout.astro";
 
 import friend_data from "../../public/friends/friends.json";
 import { Image } from "astro:assets";
@@ -13,7 +12,7 @@ import { Image } from "astro:assets";
   <ul>
     {
       friend_data
-        .toSorted((a, b) => {
+        .sort((a, b) => {
           return a.display_name.localeCompare(b.display_name);
         })
         .map(({ id, display_name, description, url }) => (
