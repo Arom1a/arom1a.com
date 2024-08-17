@@ -2,7 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContentLayout from "../layouts/ContentLayout.astro";
 
-import friend_data from "../images/friends/friends.json";
+import friend_data from "../../public/friends/friends.json";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
@@ -13,7 +14,7 @@ import friend_data from "../images/friends/friends.json";
     {
       friend_data
         .toSorted((a, b) => {
-          return a.display_name.charCodeAt(0) - b.display_name.charCodeAt(0); // TODO: more digits compare
+          return a.display_name.localeCompare(b.display_name);
         })
         .map(({ id, display_name, description, url }) => (
           <li>
@@ -21,7 +22,13 @@ import friend_data from "../images/friends/friends.json";
               href={url}
               class="my-3 flex h-24 w-full gap-3 border-4 border-textTheme/20 bg-primary p-2 text-textPrimary backdrop-blur-2xl"
             >
-              <div class="size-16 shrink-0 border-2 border-textPrimary"> {id} pic </div>
+              <Image
+                class="size-16 shrink-0 bg-textDim text-sm"
+                src={"/friends/" + id + ".webp"}
+                alt={id + " profile picture"}
+                height="10"
+                width="10"
+              />
               {/* // TODO: pic here */}
               <div>
                 <b>

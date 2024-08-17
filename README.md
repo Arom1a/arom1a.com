@@ -20,7 +20,7 @@ TODO:
   - [ ] opengraph for each post
   - [ ] Blog color type legend
   - [x] Sort by date
-  - [ ] Last revise date
+  - [x] Last revise date
 - [ ] Photo layout
 - [ ] Music cover layout
-- [ ] Friends layout
+- [x] Friends layout
