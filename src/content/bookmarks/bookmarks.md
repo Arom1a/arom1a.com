@@ -47,7 +47,7 @@ Mathematics
 
 - [AoPS](https://artofproblemsolving.com/wiki/)
 - [Writer](https://writer.com/)
-- [HELM](https://nucinkis-lab.cc.ic.ac.uk/HELM/helm_workbooks.html/)
+- [HELM](https://nucinkis-lab.cc.ic.ac.uk/HELM/helm_workbooks.html)
 - [OpenIntro](https://www.openintro.org/)
 - [CalculusMadeEasy](http://calculusmadeeasy.org/)
 - [SPSSpro](https://www.spsspro.com/)
@@ -70,6 +70,7 @@ AP Courses
 - [PWNABLE.TW](https://pwnable.tw/)
 - [PicoCTF](https://picoctf.org)
 - [Reverse Engineering for Everyone](https://0xinfection.github.io/reversing/)
+- [crackmes](https://crackmes.one/)
 
  Rust
 
