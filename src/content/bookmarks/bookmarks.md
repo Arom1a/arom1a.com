@@ -18,7 +18,7 @@
 General
 
 - [Marxists Archive](https://www.marxists.org/chinese/index.html/)
-- [zLibrary](https://singlelogin.re/)
+- [zLibrary](https://z-library.sk/)
 - [Library Genesis](https://libgen.li/index.php)
 - [Phind](https://www.phind.com/)
 - [ChatGPT](https://chat.openai.com/chat/)
@@ -42,6 +42,7 @@ Competitive Programming
 - [Advent of Code](https://adventofcode.com/)
 - [Visualgo](https://visualgo.net/en)
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+- [Algorithm Archive](https://www.algorithm-archive.org/)
 
 Mathematics
 
@@ -76,12 +77,14 @@ AP Courses
 
 - [Rust Official Book](https://doc.rust-lang.org/book/)
 - [Rust Brown Book](https://rust-book.cs.brown.edu/)
+- [Async Rust Book](https://rust-lang.github.io/async-book/)
 - [Rust by Examples](https://doc.rust-lang.org/rust-by-example/)
 - [Rust for AP CS Students](https://jmkoni.gitbook.io/rust)
 - [Blessed Rust](https://blessed.rs)
 - [Rust in 3 Days](https://google.github.io/comprehensive-rust/)
 - [Algorithms in Rust](https://github.com/TheAlgorithms/Rust)
 - [Read Rust](https://readrust.net/)
+- [Advent of Rust](https://www.rustfinity.com/advent-of-rust)
 
 - [Query.rs](https://query.rs/)
 - [lib.rs](https://lib.rs/)
@@ -129,6 +132,7 @@ Languages
 
 - [Cpp Primer](https://github.com/pezy/CppPrimer/)
 - [LearnCpp](https://www.learncpp.com/)
+- [Cpp Quiz](https://cppquiz.org)
 
 - [Python Books](https://pythonbooks.revolunet.com/)
 - [Python-100-Days](https://github.com/jackfrued/Python-100-Days)
@@ -167,6 +171,7 @@ Artificial Intelligence
 
 - [新东方 TPO](https://liuxue.koolearn.com/toefl/)
 - [小站 TPO](http://top.zhan.com/toefl/)
+- [TOEFL 100 TPO](https://www.tuofu100.cn/#/list)
 - [TOEFL](https://toefl.neea.cn/myHome/21469843/)
 - [Khan SAT](https://www.khanacademy.org/mission/sat/)
 - [CollegeBoard](https://satsuite.collegeboard.org/sat/practice-preparation/practice-tests/linear)
