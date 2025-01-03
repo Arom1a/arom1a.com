@@ -248,6 +248,7 @@ Artificial Intelligence
 - [Roboflow](https://roboflow.com/)
 - [Mendeley](https://data.mendeley.com/)
 - [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [SQLable](https://sqlable.com/generator/)
 
 ## Blog
 
