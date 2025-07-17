@@ -4,14 +4,14 @@
 
 - [YouTube Watch Later](https://www.youtube.com/playlist?list=WL)
 - [Bilibili Watch Later](https://www.bilibili.com/watchlater#/list)
-- [Zhihu Read Later](https://www.zhihu.com/collection/693108969)
-- [GitHub Stars](https://github.com/Arom1a?tab=stars)
+- [Aromia's Zhihu Read Later](https://www.zhihu.com/collection/693108969)
+- [Aromia's GitHub Stars](https://github.com/Arom1a?tab=stars)
 
-## College Application
+## CMU
 
-- [Bridge U](https://app.bridge-u.com/)
-- [Common App](https://www.commonapp.org/)
-- [UCAS](https://ucas.com/)
+- [Student Portal](https://apply-precollege.studentaffairs.cmu.edu/portal/student)
+- [Student Information Online](https://s3.andrew.cmu.edu/sio/mpa/)
+- [Pittsburgh Bus Routes](https://andysbuses.com/)
 
 ## Learning
 
@@ -60,7 +60,7 @@ AP Courses
 - [Crackap](https://www.crackap.com/)
 - [The Physics Hypertextbook](https://physics.info/)
 
- Web and Software Security
+Web and Software Security
 
 - [CTF Wiki](https://ctf-wiki.org/)
 - [Hack The Box](htts://www.hackthebox.com/)
@@ -73,7 +73,7 @@ AP Courses
 - [Reverse Engineering for Everyone](https://0xinfection.github.io/reversing/)
 - [crackmes](https://crackmes.one/)
 
- Rust
+Rust
 
 - [Rust Official Book](https://doc.rust-lang.org/book/)
 - [Rust Brown Book](https://rust-book.cs.brown.edu/)
@@ -159,7 +159,7 @@ Artificial Intelligence
 - [Civit AI](https://civitai.com/)
 - [ConvNetJS](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
- Electrical Engineering
+Electrical Engineering
 
 - [CPU Land](https://cpu.land/)
 - [JDL shop](https://www.szlcsc.com)
@@ -167,7 +167,7 @@ Artificial Intelligence
 - [All Data Sheet](https://www.alldatasheet.com)
 - [Learn About Circuits](https://www.allaboutcircuits.com/)
 
- English
+English
 
 - [新东方 TPO](https://liuxue.koolearn.com/toefl/)
 - [小站 TPO](http://top.zhan.com/toefl/)
@@ -177,10 +177,12 @@ Artificial Intelligence
 - [CollegeBoard](https://satsuite.collegeboard.org/sat/practice-preparation/practice-tests/linear)
 - [Linggle](https://linggle.com/)
 
- Japanese
+Japanese
 
+- [Furigana Maker](https://nihongodera.com/tools/furigana-maker)
 - [Kanji Dictionary](https://jitenon.com/)
-- [Anki](https://apps.ankiweb.net/)
+- [Japanese Dictionary](https://www.japandict.com/)
+- [Anki Kaishi Deck](https://github.com/donkuri/Kaishi)
 - [Sakubi Grammar](https://gohoneko.neocities.org/learn/anon/sakubi)
 - [Imabi Grammar](https://imabi.org/)
 
@@ -206,7 +208,7 @@ Artificial Intelligence
 
 ## Tools
 
- Pictures
+Pictures
 
 - [Saucenao](https://saucenao.com/)
 - [Pixiv](https://www.pixiv.net/)
@@ -215,7 +217,7 @@ Artificial Intelligence
 - [Wallhaven](https://wallhaven.cc/)
 - [Sai2](https://sai.piv.ink/)
 
- Wiki
+Wiki
 
 - [English Wiki](https://en.wikipedia.org/)
 - [Chinese Wiki](https://zh.wikipedia.org/)
@@ -226,12 +228,12 @@ Artificial Intelligence
 - [*Lobotomy Corp* Wiki](https://lobotomycorp.fandom.com/)
 - [*Don't Starve* Wiki](https://dontstarve.fandom.com/)
 
- Typing Practice
+Typing Practice
 
 - [Keybr](https://www.keybr.com/)
 - [Monkey Type](https://monkeytype.com/)
 
- Netdisk
+Cloud Drive
 
 - [Baidu Netdisk](https://pan.baidu.com 'NMSL')
 - [Weiyun](https://www.weiyun.com/)
@@ -241,13 +243,17 @@ Artificial Intelligence
 - [Huawei Cloud](https://cloud.huawei.com/home##/home/)
 - [Google Drive](https://drive.google.com/drive/u/0/home)
 
- Datasets
+Datasets
 
 - [Kaggle](https://www.kaggle.com/)
 - [Paper with Code](https://paperswithcode.com/)
 - [Roboflow](https://roboflow.com/)
 - [Mendeley](https://data.mendeley.com/)
 - [Google Dataset Search](https://datasetsearch.research.google.com/)
+
+Travelling
+
+- [Kayak](https://www.kayak.com/)
 
 ## Blog
 
@@ -268,7 +274,8 @@ zh
 - [Anthony Fu](https://antfu.me/)
 - [Astris](https://www.qaq.wiki/)
 
-## Legacy
+## College Application
 
-- [Student Portal](https://apply-precollege.studentaffairs.cmu.edu/portal/student)
-- [Student Information Online](https://s3.andrew.cmu.edu/sio/mpa/)
+- [Bridge U](https://app.bridge-u.com/)
+- [Common App](https://www.commonapp.org/)
+- [UCAS](https://ucas.com/)
