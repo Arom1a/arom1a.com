@@ -6,3 +6,4 @@
 - [JB Exercise](https://www.jiba.plus/)
 - [Konachan](https://konachan.com/)
 - [Nyaa](https://nyaa.si/)
+- [JAVLibrary](https://www.javlibrary.com)

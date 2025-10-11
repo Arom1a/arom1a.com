@@ -103,6 +103,7 @@ Frontend Mess
 - [Landing Love](https://www.landing.love/)
 - [Land Book](https://land-book.com/)
 - [Bult for Mars](https://builtformars.com/ux-glossary)
+- [Dead Simple Sites](https://deadsimplesites.com/)
 - [Webflow](https://webflow.com/made-in-webflow/portfolio/popular)
 - [UI Patterns](https://ui-patterns.com/)
 - [Call to Idea](http://www.calltoidea.com/)
@@ -119,8 +120,9 @@ Frontend Mess
 - [Icones](https://icones.js.org/)
 - [Iconify](https://icon-sets.iconify.design/)
 - [YesIcon](https://yesicon.app/)
+- [OKLCH Color Palette](https://oklch.fyi/)
 
-Languages
+Programming Languages
 
 - [CS Self-learning](https://csdiy.wiki/)
 - [Exercism](https://exercism.org/)
@@ -137,6 +139,7 @@ Languages
 - [Python Books](https://pythonbooks.revolunet.com/)
 - [Python-100-Days](https://github.com/jackfrued/Python-100-Days)
 - [PythonChallenge](http://www.pythonchallenge.com)
+- [Learn Python Org](https://learnpython.org/)
 
 Misc. (industrial)
 
@@ -207,6 +210,8 @@ Japanese
 - [Explain xkcd](https://www.explainxkcd.com/)
 
 ## Tools
+
+- [metacubexd](https://d.metacubex.one/#/proxies)
 
 Pictures
 
