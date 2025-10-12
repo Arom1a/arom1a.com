@@ -1,0 +1,7 @@
+dist/
+.astro/
+.vscode/
+node_modules/
+package.json
+pnpm-lock.yaml
+*.mdx

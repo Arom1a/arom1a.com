@@ -1,14 +1,26 @@
 {
-  "name": "",
+  "name": "arom1a.com",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "format": "prettier --write .",
+    "check": "astro check && oxlint && prettier --check .",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "astro": "^5.14.4"
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.7",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.4",
+    "oxlint": "^1.22.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
   }
 }
