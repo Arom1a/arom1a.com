@@ -4,5 +4,17 @@
     "display_name": "Cyrus",
     "description": "欢迎来到这最后的精神净土，我亲爱的朋友",
     "url": "https://www.cyrusblog.net/"
+  },
+  {
+    "id": "cirex",
+    "display_name": "Cirex",
+    "description": "Words, when arranged the right way, also have magic.",
+    "url": "https://cirex.dev/"
+  },
+  {
+    "id": "stanleymw",
+    "display_name": "Stanley Wang",
+    "description": "I am currently a student at Carnegie Mellon University studying Computer Science.",
+    "url": "https://stan.wang/"
   }
 ]
