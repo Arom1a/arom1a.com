@@ -1,6 +1,6 @@
 # Bookmark
 
-## Feeling Board?
+## Feeling Bored?
 
 - [YouTube Watch Later](https://www.youtube.com/playlist?list=WL)
 - [Bilibili Watch Later](https://www.bilibili.com/watchlater#/list)
@@ -36,6 +36,7 @@ Competitive Programming
 
 - [CSES Problem List](https://cses.fi/problemset/list/)
 - [USACO Training](https://train.usaco.org/)
+- [Project Euler](https://projecteuler.net/about)
 - [Leetcode](https://leetcode.com)
 - [Rust Competitive Programming](https://rustp.org/)
 - [Neetcode](https://neetcode.io/courses)
@@ -53,6 +54,7 @@ Mathematics
 - [CalculusMadeEasy](http://calculusmadeeasy.org/)
 - [SPSSpro](https://www.spsspro.com/)
 - [Cambridge Notes](https://dec41.user.srcf.net/notes/)
+- [Digital Signals Theory](https://brianmcfee.net/dstbook-site/content/intro.html)
 
 AP Courses
 
@@ -121,6 +123,7 @@ Frontend Mess
 - [Iconify](https://icon-sets.iconify.design/)
 - [YesIcon](https://yesicon.app/)
 - [OKLCH Color Palette](https://oklch.fyi/)
+- [LoadMore](https://loadmo.re/)
 
 Programming Languages
 
@@ -146,6 +149,10 @@ Misc. (industrial)
 - [The Missing Semester](https://missing.csail.mit.edu/)
 - [Git Cheatsheet](https://cs.fyi/guide/git-cheatsheet/)
 - [Vim Cheatsheet](https://vim.rtorr.com/)
+- [Regex Cheatsheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [regex101](https://regex101.com/)
+- [regexr](https://regexr.com/)
+- [regexle (regex wordle)](https://regexle.com/)
 - [Choose a License](https://choosealicense.com/licenses/)
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [Docker Practice](https://yeasy.gitbook.io/docker_practice)
