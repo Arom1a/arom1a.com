@@ -1,0 +1,28 @@
+# Allow all major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Catch-all for other bots
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://arom1a.com/sitemap.xml

@@ -2,34 +2,128 @@
 import Navbar from "../components/Navbar.astro";
 import CornerButton from "../components/CornerButton.astro";
 
-const { title = "Aromia's Homepage" } = Astro.props;
+interface AlternateLang {
+  lang: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  lang?: string;
+  alternateLangs?: AlternateLang[];
+  noindex?: boolean;
+  structuredData?: object;
+}
+
+const {
+  title = "Aromia's Homepage",
+  description = "Hiiii, this is Aromia~",
+  canonicalUrl,
+  ogImage = "https://arom1a.com/aromia.png",
+  lang = "en",
+  alternateLangs = [],
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = "https://arom1a.com";
+const currentPath = Astro.url.pathname;
+const fullCanonicalUrl = canonicalUrl || `${siteUrl}${currentPath}`;
+
+// Default WebSite structured data for homepage
+const defaultStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Aromia's Homepage",
+  url: siteUrl,
+  author: {
+    "@type": "Person",
+    name: "Aromia",
+  },
+};
+
+const finalStructuredData = structuredData || defaultStructuredData;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <title>{title}</title>
-    <meta name="description" content="Hiiii, this is Aromia~" />
-    <meta name="keywords" content="aromia arom1a homepage blog" />
-    <meta name="author" content="Aromia" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
-    <meta name="og:type" content="website" />
-    <meta name="og:title" content={title} />
-    <meta name="og:url" content="https://arom1a.com" />
-    <meta name="og:description" content="Hiiii, this is Aromia~" />
-    <meta name="og:image" content="https://arom1a.com/aromia.png" />
+    {/* Primary Meta Tags */}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="aromia, arom1a, homepage, blog, programming, tech" />
+    <meta name="author" content="Aromia" />
 
+    {/* Robots - Allow indexing by default */}
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+      )
+    }
+
+    {/* Canonical URL - Self-referencing to prevent duplicate content */}
+    <link rel="canonical" href={fullCanonicalUrl} />
+
+    {/* Multilingual SEO - hreflang tags */}
+    {
+      alternateLangs.length > 0 && (
+        <>
+          {alternateLangs.map((alt) => (
+            <link rel="alternate" hreflang={alt.lang} href={alt.url} />
+          ))}
+          {/* x-default points to the default language version */}
+          <link
+            rel="alternate"
+            hreflang="x-default"
+            href={alternateLangs.find((alt) => alt.lang === "en")?.url || fullCanonicalUrl}
+          />
+        </>
+      )
+    }
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullCanonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Aromia's Homepage" />
+    <meta property="og:locale" content={lang === "zh" ? "zh_CN" : "en_US"} />
+    {
+      alternateLangs.map((alt) => (
+        <meta
+          property="og:locale:alternate"
+          content={alt.lang === "zh" ? "zh_CN" : "en_US"}
+        />
+      ))
+    }
+
+    {/* Twitter Card */}
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={fullCanonicalUrl} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:site:id" content="@arom1a" />
-    <meta name="twitter:description" content="Hiiii, this is Aromia~" />
-    <meta name="twitter:image" content="https://arom1a.com/aromia.png" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@arom1a" />
 
+    {/* Favicon */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* Darkreader lock */}
     <meta name="darkreader-lock" />
 
+    {/* Structured Data / JSON-LD */}
+    <script type="application/ld+json" set:html={JSON.stringify(finalStructuredData)} />
+
+    {/* Styles */}
     <link rel="stylesheet" href="/global.css" />
   </head>
   <body class="bg-bgMain">

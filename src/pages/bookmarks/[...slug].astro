@@ -14,6 +14,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<ContentLayout>
+<ContentLayout title={`${entry.slug} - Bookmarks`}>
   <Content />
 </ContentLayout>

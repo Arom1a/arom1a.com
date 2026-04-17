@@ -1,10 +1,44 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-const { title } = Astro.props;
+interface AlternateLang {
+  lang: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  lang?: string;
+  alternateLangs?: AlternateLang[];
+  noindex?: boolean;
+  structuredData?: object;
+}
+
+const { 
+  title, 
+  description,
+  canonicalUrl,
+  ogImage,
+  lang = "en",
+  alternateLangs = [],
+  noindex,
+  structuredData,
+} = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout 
+  title={title}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  ogImage={ogImage}
+  lang={lang}
+  alternateLangs={alternateLangs}
+  noindex={noindex}
+  structuredData={structuredData}
+>
   <div
     id="content-container"
     class="prose prose-headings:text-textPrimary prose-h1:my-2 prose-h2:my-6 prose-p:text-textPrimary prose-a:text-linkPrimary hover:prose-a:text-linkHover"

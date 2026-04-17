@@ -2,9 +2,37 @@
 import { Image } from "astro:assets";
 import banner from "../images/banner.jpg";
 import ContentLayout from "../layouts/ContentLayout.astro";
+
+const siteUrl = "https://arom1a.com";
+const canonicalUrl = siteUrl;
+
+// Homepage supports both languages
+const alternateLangs = [
+  { lang: "en", url: siteUrl },
+  { lang: "zh", url: siteUrl },
+];
+
+// Person structured data for homepage
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aromia",
+  url: siteUrl,
+  sameAs: [
+    "https://github.com/Arom1a",
+  ],
+  description: "Math & CS enthusiast, rhythm game player. Be grateful, be kind.",
+};
 ---
 
-<ContentLayout title="Aromia's Homepage">
+<ContentLayout
+  title="Aromia's Homepage"
+  description="Hiiii, this is Aromia~ Math & CS enthusiast, rhythm game player. Be grateful, be kind."
+  canonicalUrl={canonicalUrl}
+  lang="en"
+  alternateLangs={alternateLangs}
+  structuredData={personStructuredData}
+>
   <a href="https://www.pixiv.net/artworks/66812659" class="pointer-events-none">
     <Image src={banner} alt="banner" class="m-0 h-52" />
   </a>

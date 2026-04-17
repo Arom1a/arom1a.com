@@ -96,9 +96,45 @@ zhDisplayBlogEntries.forEach((entry) => {
 const pubMonths = [...enMonthMapToEntry.keys()].sort((a, b) => parseInt(b) - parseInt(a));
 
 const totalBlogNum = enDisplayBlogEntries.length;
+
+// SEO Configuration
+const siteUrl = "https://arom1a.com";
+const canonicalUrl = `${siteUrl}/blog/`;
+
+// Alternate language links for hreflang
+const alternateLangs = [
+  { lang: "en", url: canonicalUrl },
+  { lang: "zh", url: `${siteUrl}/blog/` },
+];
+
+// Blog index structured data
+const blogIndexStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Blog - Aromia's Homepage",
+  description: "A collection of blog posts by Aromia covering tech, thoughts, reviews, and more.",
+  url: canonicalUrl,
+  author: {
+    "@type": "Person",
+    name: "Aromia",
+    url: siteUrl,
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Aromia's Homepage",
+    url: siteUrl,
+  },
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Blog - Aromia's Homepage"
+  description="A collection of blog posts by Aromia covering tech, thoughts, reviews, and more."
+  canonicalUrl={canonicalUrl}
+  lang="en"
+  alternateLangs={alternateLangs}
+  structuredData={blogIndexStructuredData}
+>
   <ul id="en-list">
     {
       pubMonths.map((month) => (

@@ -1,7 +1,7 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
-
 import { getCollection } from "astro:content";
+
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
@@ -10,9 +10,89 @@ export async function getStaticPaths() {
   }));
 }
 
+// Get all blog entries to find alternate language versions
+const allBlogEntries = await getCollection("blog");
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+const siteUrl = "https://arom1a.com";
+
+// Detect language from slug (en/ or zh/)
+const lang = entry.slug.startsWith("zh/") ? "zh" : "en";
+const postId = entry.data.id;
+
+// Find alternate language version
+const alternateEntry = allBlogEntries.find(
+  (e) => e.data.id === postId && e.slug !== entry.slug
+);
+
+// Build alternate language links for hreflang
+const alternateLangs = [];
+const currentUrl = `${siteUrl}/blog/${entry.slug}/`;
+
+// Add current page
+alternateLangs.push({
+  lang: lang,
+  url: currentUrl,
+});
+
+// Add alternate language if exists
+if (alternateEntry) {
+  const altLang = alternateEntry.slug.startsWith("zh/") ? "zh" : "en";
+  alternateLangs.push({
+    lang: altLang,
+    url: `${siteUrl}/blog/${alternateEntry.slug}/`,
+  });
+}
+
+// Generate description: use frontmatter if exists, otherwise extract from content
+function generateDescription(): string {
+  // Check if description exists in frontmatter
+  if ((entry.data as any).description) {
+    return (entry.data as any).description;
+  }
+
+  // Extract first paragraph from rendered content
+  // We'll use the raw body content
+  const rawContent = entry.body || "";
+  
+  // Remove frontmatter
+  const contentWithoutFrontmatter = rawContent.replace(/^---[\s\S]*?---/, "").trim();
+  
+  // Find first paragraph (text before first blank line or heading)
+  const lines = contentWithoutFrontmatter.split("\n");
+  const firstParagraphLines: string[] = [];
+  
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // Skip empty lines, headings, and reference links
+    if (!trimmed || trimmed.startsWith("#") || trimmed.startsWith("[^")) {
+      if (firstParagraphLines.length > 0) break;
+      continue;
+    }
+    firstParagraphLines.push(trimmed);
+  }
+  
+  let description = firstParagraphLines.join(" ").trim();
+  
+  // Remove markdown links [text](url)
+  description = description.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  
+  // Remove footnote references [^n]
+  description = description.replace(/\[\^\d+\]/g, "");
+  
+  // Limit to 160 characters for SEO
+  if (description.length > 160) {
+    description = description.substring(0, 157) + "...";
+  }
+  
+  return description || "A blog post by Aromia";
+}
+
+const description = generateDescription();
+
+// Format dates
 const publishDate =
   "" +
   ((entry.data.pubDate.getMonth() + 1).toString().length < 2
@@ -35,15 +115,52 @@ const lastUpDate =
     : entry.data.upDate.getDate()) +
   "/" +
   entry.data.upDate.getFullYear();
+
+// ISO format for structured data
+const pubDateISO = entry.data.pubDate.toISOString();
+const upDateISO = entry.data.upDate.toISOString();
+
+// Article structured data
+const articleStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: entry.data.title,
+  description: description,
+  author: {
+    "@type": "Person",
+    name: "Aromia",
+    url: siteUrl,
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Aromia",
+    url: siteUrl,
+  },
+  datePublished: pubDateISO,
+  dateModified: upDateISO,
+  url: currentUrl,
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": currentUrl,
+  },
+  inLanguage: lang === "zh" ? "zh-CN" : "en-US",
+  articleSection: entry.data.category,
+};
 ---
 
-<ContentLayout title={entry.data.title}>
+<ContentLayout 
+  title={entry.data.title}
+  description={description}
+  canonicalUrl={currentUrl}
+  lang={lang}
+  alternateLangs={alternateLangs}
+  structuredData={articleStructuredData}
+>
   <h1>{entry.data.title}</h1>
-  <div class="flex justify-between">
+  <div class="flex justify-between text-textDim text-sm mb-6">
     <div>
       Publish date: {publishDate}
     </div>
-
     <div>
       Last update: {lastUpDate}
     </div>
