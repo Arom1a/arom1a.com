@@ -1,3 +1,9 @@
+https://www.dark.design/
+https://www.footer.design/
+https://www.landingly.co/
+https://godly.website/
+https://www.awwwards.com/
+
 # Bookmark
 
 ## Feeling Bored?
@@ -278,6 +284,7 @@ en
 - [Brian's Comments](https://comments.bmartin.cc/)
 - [Web Dev Simplified Blog](https://blog.webdevsimplified.com/)
 - [Max Niederman](https://maxniederman.com/)
+- [Nicholas](https://nicholas.carlini.com/)
 
 zh
 

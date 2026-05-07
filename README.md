@@ -2,6 +2,11 @@
 
 My virtual cottage.
 
+favicon color:
+oklch(0.9 0.04 330)
+maybe consider oklch(0.9 0.04 300)
+or oklch(0.9 0.04 320)
+
 <https://arom1a.com>
 
 TODO:
