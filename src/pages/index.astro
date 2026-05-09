@@ -1,16 +1,19 @@
 ---
-import "../style/global.css";
+import { getCollection } from "astro:content";
+import CommonLayout from "../layouts/CommonLayout.astro";
+
+const allBlogPosts = (await getCollection("blog")).filter((post) => !post.data.hidden);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1 class="text-9xl text-violet-300">Astro</h1>
-  </body>
-</html>
+<CommonLayout>
+  <h1 class="text-9xl text-violet-300">Aromia</h1>
+  <ul>
+    {
+      allBlogPosts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</CommonLayout>

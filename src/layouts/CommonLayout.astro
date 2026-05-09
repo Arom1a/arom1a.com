@@ -1,0 +1,19 @@
+---
+import "../style/global.css";
+import CommonHeads from "../components/CommonHeads.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en" data-theme="dark">
+  <head>
+    <CommonHeads />
+    <title>arom1a.com</title>
+  </head>
+
+  <body class="bg-bg-color text-text-primary mx-20">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

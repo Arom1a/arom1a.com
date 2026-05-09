@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* dark mode first */
+@theme {
+  /* across all themes */
+  --font-copperplate: "Snell Roundhand";
+
+  /* overridable  variables*/
+  --color-bg-color: oklch(0 0 0);
+  --color-theme: oklch(0.9 0.04 300);
+  --color-text-primary: oklch(92% 0.01 255);
+  --color-text-muted: oklch(75% 0.01 255);
+}
+
+/* light mode */
+:root[data-theme="light"] {
+  --color-bg-color: oklch(0 0 0);
+}
