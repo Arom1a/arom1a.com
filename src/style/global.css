@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* dark mode first */
 @theme {
@@ -15,4 +16,9 @@
 /* light mode */
 :root[data-theme="light"] {
   --color-bg-color: oklch(0 0 0);
+}
+
+.prose {
+  --tw-prose-body: var(--color-text-primary);
+  --tw-prose-headings: var(--color-text-primary);
 }

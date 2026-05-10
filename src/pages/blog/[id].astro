@@ -15,10 +15,8 @@ const { Content } = await render(post);
 ---
 
 <CommonLayout>
-  <article>
-    <h1>
-      {post.data.title}
-    </h1>
+  <article class="prose max-w-none">
+    <h1>{post.data.title}</h1>
     <Content />
   </article>
 </CommonLayout>
