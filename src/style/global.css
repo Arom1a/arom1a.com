@@ -18,7 +18,18 @@
   --color-bg-color: oklch(0 0 0);
 }
 
+/* tailwind topygraphy patch */
 .prose {
   --tw-prose-body: var(--color-text-primary);
   --tw-prose-headings: var(--color-text-primary);
+
+  /* remove tailwind prose backticks */
+  code:not(pre code)::before,
+  code:not(pre code)::after {
+    content: none;
+  }
+
+  code:not(pre code) {
+    @apply text-text-primary rounded bg-neutral-800 px-1.5 py-0.5;
+  }
 }

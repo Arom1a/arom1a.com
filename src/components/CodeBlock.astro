@@ -1,0 +1,37 @@
+---
+import { Copy, Check } from "@lucide/astro";
+---
+
+<div class="group relative">
+  <pre class="rounded-lg bg-neutral-800"><slot /></pre>
+
+  <button
+    class="copy-btn text-text-muted hover:text-text-primary absolute top-2 right-2 rounded-lg bg-neutral-900 p-1.5 opacity-0 transition-opacity group-hover:opacity-100"
+    aria-label="Copy code"
+  >
+    <span class="copy-icon"><Copy size={16} /></span>
+    <span class="check-icon hidden text-green-500"><Check size={16} /></span>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll(".copy-btn").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const pre = button.parentElement?.querySelector("pre");
+      if (!pre) return;
+      const code = pre.textContent || "";
+      await navigator.clipboard.writeText(code);
+
+      const copyIcon = button.querySelector(".copy-icon");
+      const checkIcon = button.querySelector(".check-icon");
+      if (copyIcon && checkIcon) {
+        copyIcon.classList.add("hidden");
+        checkIcon.classList.remove("hidden");
+        setTimeout(() => {
+          copyIcon.classList.remove("hidden");
+          checkIcon.classList.add("hidden");
+        }, 2000);
+      }
+    });
+  });
+</script>
