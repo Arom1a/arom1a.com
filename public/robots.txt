@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arom1a.com/sitemap-index.xml
