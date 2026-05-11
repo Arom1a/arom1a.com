@@ -12,4 +12,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [mdx(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: "rose-pine",
+    },
+  },
 });

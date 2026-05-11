@@ -6,11 +6,15 @@
   /* across all themes */
   --font-copperplate: "Snell Roundhand";
 
-  /* overridable  variables*/
-  --color-bg-color: oklch(0 0 0);
+  /* overridable variables */
+  --color-bg-color: oklch(0.2 0.03 300);
   --color-theme: oklch(0.9 0.04 300);
-  --color-text-primary: oklch(92% 0.01 255);
-  --color-text-muted: oklch(75% 0.01 255);
+  --color-text-bright: oklch(95% 0.01 300);
+  --color-text-primary: oklch(80% 0.01 300);
+  --color-text-muted: oklch(70% 0.01 300);
+  --color-theme-bright: var(--color-violet-200);
+  --color-theme-primary: var(--color-violet-300);
+  --color-theme-muted: var(--color-violet-400);
 }
 
 /* light mode */
@@ -22,6 +26,20 @@
 .prose {
   --tw-prose-body: var(--color-text-primary);
   --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-lead: initial;
+  --tw-prose-links: var(--color-theme);
+  --tw-prose-bold: var(--color-text-bright);
+  --tw-prose-counters: var(--color-theme-primary);
+  --tw-prose-bullets: var(--color-theme);
+  --tw-prose-hr: var(--color-theme);
+  --tw-prose-quotes: var(--color-text-muted);
+  --tw-prose-quote-borders: var(--color-theme);
+  --tw-prose-captions: initial;
+  --tw-prose-code: var(--color-text-primary);
+  --tw-prose-pre-code: initial;
+  --tw-prose-pre-bg: oklch(0.3 0.04 300);
+  --tw-prose-th-borders: var(--color-theme-primary);
+  --tw-prose-td-borders: var(--color-theme);
 
   /* remove tailwind prose backticks */
   code:not(pre code)::before,
@@ -30,6 +48,6 @@
   }
 
   code:not(pre code) {
-    @apply text-text-primary rounded bg-neutral-800 px-1.5 py-0.5;
+    @apply rounded bg-neutral-800 px-1.5 py-0.5;
   }
 }

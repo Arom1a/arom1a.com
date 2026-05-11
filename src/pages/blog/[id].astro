@@ -17,7 +17,7 @@ const { Content } = await render(post);
 
 <CommonLayout>
   <article class="prose max-w-none">
-    <h1>{post.data.title}</h1>
+    <h1 class="text-text-bright">{post.data.title}</h1>
     <Content components={{ pre: CodeBlock }} />
   </article>
 </CommonLayout>
