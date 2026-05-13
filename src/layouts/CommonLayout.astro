@@ -8,12 +8,14 @@ import Footer from "../components/Footer.astro";
 <html lang="en" data-theme="dark">
   <head>
     <CommonHeads />
-    <title>arom1a.com</title>
+    <title>Home - Aromia</title>
   </head>
 
-  <body class="bg-bg-color text-text-primary mx-20">
+  <body class="bg-bg-color text-text-primary">
     <Header />
-    <slot />
+    <div class="mx-auto min-h-auto max-w-6xl min-w-0 px-3 py-4">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>

@@ -6,7 +6,7 @@
     "format": "prettier --write .",
     "lint": "astro check && oxlint && prettier --check .",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "COMMIT_HASH=$(git rev-parse HEAD) TIMESTAMP=$(date +%s) astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

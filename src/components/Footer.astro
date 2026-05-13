@@ -1,1 +1,23 @@
-<footer>2024-2026 &copy Aromia</footer>
+---
+const commit_hash = import.meta.env.COMMIT_HASH?.slice(0, 7) ?? "dev";
+const built_timestamp = import.meta.env.TIMESTAMP ?? Date.now();
+
+const profile_link = "https://github.com/Arom1a";
+const gh_commit_link = `https://github.com/Arom1a/arom1a.com/commit/${commit_hash}`;
+const timestamp_convert_link = `https://time.is/${built_timestamp}`;
+const generator_link = "https://astro.build";
+---
+
+<footer class="pt-3 pb-1">
+  <div class="with-separator mx-auto flex max-w-6xl justify-between">
+    <span><a href={profile_link} class="hover:text-theme">Aromia</a> &copy 2024-2026</span>
+
+    <span>
+      <a href={gh_commit_link} class="hover:text-blue-400">{commit_hash}</a>
+      built at
+      <a href={timestamp_convert_link} class="hover:text-theme">{built_timestamp}</a>
+      with
+      <a href={generator_link} class="hover:text-theme">{Astro.generator}</a>
+    </span>
+  </div>
+</footer>
