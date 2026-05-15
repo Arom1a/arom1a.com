@@ -16,8 +16,14 @@ const { Content } = await render(post);
 ---
 
 <CommonLayout>
-  <article class="prose max-w-none">
-    <h1 class="text-text-bright">{post.data.title}</h1>
+  <article class="prose max-w-none pt-10">
+    <section class="mb-10">
+      <h1 class="text-text-bright mb-2 text-center">{post.data.title}</h1>
+      <div class="mx-auto flex w-fit gap-5 text-sm">
+        <span>date</span>
+        <span>last update</span>
+      </div>
+    </section>
     <Content components={{ pre: CodeBlock }} />
   </article>
 </CommonLayout>
