@@ -6,11 +6,9 @@ const allBlogPosts = (await getCollection("blog")).filter((post) => !post.data.h
 
 blog
 <ul>
-  {
-    allBlogPosts.map((post) => (
-      <li>
-        <a href={`/blog/${post.id}`}>{post.data.title}</a>
-      </li>
-    ))
-  }
+  {allBlogPosts.map((post) => (
+    <li>
+      <a href={`/blog/${post.id}`}>{post.data.title}</a>
+    </li>
+  ))}
 </ul>

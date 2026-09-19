@@ -8,12 +8,10 @@ const allBlogPosts = (await getCollection("blog")).filter((post) => !post.data.h
 <CommonLayout>
   <h1 class="text-9xl text-violet-300">Aromia</h1>
   <ul>
-    {
-      allBlogPosts.map((post) => (
-        <li>
-          <a href={`/blog/${post.id}`}>{post.data.title}</a>
-        </li>
-      ))
-    }
+    {allBlogPosts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+      </li>
+    ))}
   </ul>
 </CommonLayout>

@@ -10,14 +10,27 @@ const generator_link = "https://astro.build";
 
 <footer class="border-theme-muted mt-10 border-t pt-3 pb-1">
   <div class="mx-auto flex justify-between">
-    <span><a href={profile_link} class="hover:text-theme">Aromia</a> &copy 2024-2026</span>
+    <span>
+      <a href={profile_link} class="hover:text-theme">
+        Aromia{" "}
+      </a>
+      &copy 2024-2026
+    </span>
 
     <span>
-      <a href={gh_commit_link} class="hover:text-blue-400">{commit_hash}</a>
+      <a href={gh_commit_link} class="hover:text-blue-400">
+        {commit_hash}{" "}
+      </a>
       built at
-      <a href={timestamp_convert_link} class="hover:text-theme">{built_timestamp}</a>
+      <a href={timestamp_convert_link} class="hover:text-theme">
+        {" "}
+        {built_timestamp}{" "}
+      </a>
       with
-      <a href={generator_link} class="hover:text-theme">{Astro.generator}</a>
+      <a href={generator_link} class="hover:text-theme">
+        {" "}
+        {Astro.generator}
+      </a>
     </span>
   </div>
 </footer>
