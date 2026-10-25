@@ -13,15 +13,21 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
 ---
 
 <CommonLayout>
   <article class="prose max-w-none pt-10">
     <section class="mb-10">
       <h1 class="text-text-bright mb-2 text-center">{post.data.title}</h1>
-      <div class="mx-auto flex w-fit gap-5 text-sm">
-        <span>date</span>
-        <span>last update</span>
+      <div class="text-text-muted mx-auto flex w-fit gap-5 text-sm">
+        <time datetime={post.data.pubDate.toISOString()}>
+          published {formatDate(post.data.pubDate)}
+        </time>
+        <time datetime={post.data.upDate.toISOString()}>
+          updated {formatDate(post.data.upDate)}
+        </time>
       </div>
     </section>
     <Content components={{ pre: CodeBlock }} />

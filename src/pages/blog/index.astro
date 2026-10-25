@@ -1,14 +1,106 @@
 ---
 import { getCollection } from "astro:content";
+import CommonLayout from "../../layouts/CommonLayout.astro";
 
-const allBlogPosts = (await getCollection("blog")).filter((post) => !post.data.hidden);
+type Lang = "en" | "zh";
+
+const langOf = (post: { id: string }): Lang => (post.id.startsWith("zh/") ? "zh" : "en");
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const groups = new Map<string, typeof posts>();
+for (const post of posts) {
+  const group = groups.get(post.data.id) ?? [];
+  group.push(post);
+  groups.set(post.data.id, group);
+}
+
+const items = [...groups.values()].map((group) => {
+  const en = group.find((post) => langOf(post) === "en") ?? group[0];
+  const zh = group.find((post) => langOf(post) === "zh") ?? en;
+
+  return {
+    date: group[0].data.pubDate,
+    en: { title: en.data.title, href: `/blog/${en.id}` },
+    zh: { title: zh.data.title, href: `/blog/${zh.id}` },
+  };
+});
 ---
 
-blog
-<ul>
-  {allBlogPosts.map((post) => (
-    <li>
-      <a href={`/blog/${post.id}`}>{post.data.title}</a>
-    </li>
-  ))}
-</ul>
+<CommonLayout>
+  <div class="mb-4 flex items-baseline justify-between">
+    <h1 class="text-text-bright text-2xl">blog</h1>
+    <button
+      id="lang-toggle"
+      class="text-text-muted hover:text-text-primary cursor-pointer text-sm"
+      aria-label="Switch to Chinese"
+    >
+      中文
+    </button>
+  </div>
+
+  <ul class="blog-list">
+    {items.map((item) => (
+      <li>
+        <a
+          href={item.en.href}
+          data-en-href={item.en.href}
+          data-zh-href={item.zh.href}
+          data-en-title={item.en.title}
+          data-zh-title={item.zh.title}
+          class="flex h-11 items-center gap-3"
+        >
+          <span data-title class="text-text-bright truncate">
+            {item.en.title}
+          </span>
+          <span class="border-theme-muted flex-1 border-b border-dotted" />
+          <time class="text-text-muted shrink-0 text-sm" datetime={item.date.toISOString()}>
+            {item.date.toISOString().slice(0, 10).replaceAll("-", ".")}
+          </time>
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <script is:inline>
+    const toggle = document.getElementById("lang-toggle");
+    const key = "lang";
+    const saved = localStorage.getItem(key);
+    let lang =
+      saved === "en" || saved === "zh"
+        ? saved
+        : navigator.language.toLowerCase().startsWith("zh")
+          ? "zh"
+          : "en";
+
+    const apply = () => {
+      document.querySelectorAll(".blog-list a").forEach((a) => {
+        a.querySelector("[data-title]").textContent = a.dataset[lang + "Title"];
+        a.href = a.dataset[lang + "Href"];
+        a.lang = lang === "zh" ? "zh-CN" : "en";
+      });
+      toggle.textContent = lang === "zh" ? "en" : "中文";
+      toggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "Switch to Chinese");
+    };
+
+    apply();
+    toggle.addEventListener("click", () => {
+      lang = lang === "en" ? "zh" : "en";
+      localStorage.setItem(key, lang);
+      apply();
+    });
+  </script>
+  <style>
+    .blog-list a {
+      transition: opacity 0.15s ease-out;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .blog-list:has(a:hover) a:not(:hover) {
+        opacity: 0.4;
+      }
+    }
+  </style>
+</CommonLayout>
