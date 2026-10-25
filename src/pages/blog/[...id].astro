@@ -17,7 +17,7 @@ const { Content } = await render(post);
 const formatDate = (date: Date) => date.toISOString().slice(0, 10);
 ---
 
-<CommonLayout>
+<CommonLayout title={`${post.data.title} - Aromia`}>
   <article class="prose max-w-none pt-10">
     <section class="mb-10">
       <h1 class="text-text-bright mb-2 text-center">{post.data.title}</h1>

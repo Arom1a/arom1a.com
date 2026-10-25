@@ -1,0 +1,28 @@
+---
+import { parse } from "smol-toml";
+import CommonLayout from "../../layouts/CommonLayout.astro";
+import bookmarksToml from "../../content/bookmarks/bookmarks.toml?raw";
+
+const bookmarks = parse(bookmarksToml) as Record<string, Record<string, string>>;
+---
+
+<CommonLayout title="Bookmarks - Aromia">
+  <h1 class="text-text-bright mb-6 text-2xl">bookmarks</h1>
+
+  <div class="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-6">
+    {Object.entries(bookmarks).map(([category, links]) => (
+      <section class="border-theme-muted border p-4">
+        <h2 class="text-text-bright mb-3 text-center text-lg">{category}</h2>
+        <ul class="grid grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] gap-4 text-sm leading-none">
+          {Object.entries(links).map(([title, href]) => (
+            <li>
+              <a href={href} class="hover:text-text-bright break-words hover:underline">
+                {title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</CommonLayout>

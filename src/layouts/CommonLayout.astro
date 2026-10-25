@@ -3,12 +3,18 @@ import "../style/global.css";
 import CommonHeads from "../components/CommonHeads.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Home - Aromia" } = Astro.props;
 ---
 
 <html lang="en" data-theme="dark">
   <head>
     <CommonHeads />
-    <title>Home - Aromia</title>
+    <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
