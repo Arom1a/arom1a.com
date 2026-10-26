@@ -1,5 +1,6 @@
 ---
 import { parse } from "smol-toml";
+import { Info } from "@lucide/astro";
 import CommonLayout from "../../layouts/CommonLayout.astro";
 import bookmarksToml from "../../content/bookmarks/bookmarks.toml?raw";
 
@@ -16,7 +17,7 @@ const bookmarks = parse(bookmarksToml) as Record<string, Record<string, string>>
         <ul class="grid grid-cols-[repeat(auto-fill,minmax(10rem,1fr))] gap-4 text-sm leading-none">
           {Object.entries(links).map(([title, href]) => (
             <li>
-              <a href={href} class="hover:text-text-bright break-words hover:underline">
+              <a href={href} class="hover:text-text-bright wrap-break-word hover:underline">
                 {title}
               </a>
             </li>
@@ -25,4 +26,24 @@ const bookmarks = parse(bookmarksToml) as Record<string, Record<string, string>>
       </section>
     ))}
   </div>
+
+  <div class="text-text-muted flex items-center text-sm mt-8 -mb-9">
+    <Info size={14} class="shrink-0 mr-1" aria-hidden="true" />
+    <p>
+      this page (and only this page) will be cached for offline availability using{" "}
+      <a href="/sw.js" class="underline hover:text-theme">
+        service worker
+      </a>{" "}
+      after your first visit
+    </p>
+  </div>
+
+  {
+    // disable the service worker on the dev server
+    import.meta.env.PROD && <script is:inline>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js", { scope: "/bookmarks" }).catch(console.error);
+      }
+    </script>
+  }
 </CommonLayout>
