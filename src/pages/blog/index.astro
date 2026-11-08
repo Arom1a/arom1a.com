@@ -7,7 +7,7 @@ type Lang = "en" | "zh";
 const langOf = (post: { id: string }): Lang => (post.id.startsWith("zh/") ? "zh" : "en");
 
 const posts = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
+  .filter((post) => !post.data.hidden)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
 const groups = new Map<string, typeof posts>();

@@ -10,7 +10,7 @@ const blog = defineCollection({
     pubDate: z.date(),
     upDate: z.date(),
     category: z.enum(["note", "trivia", "lit", "thought", "review", "tech"]),
-    draft: z.boolean().optional(),
+    hidden: z.boolean().optional(),
   }),
 });
 
