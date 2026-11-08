@@ -1,13 +1,14 @@
 ["Feeling Bored?"]
 "YouTube Watch Later" = "https://www.youtube.com/playlist?list=WL"
 "Bilibili Watch Later" = "https://www.bilibili.com/watchlater#/list"
-"Aromia's Zhihu Read Later" = "https://www.zhihu.com/collection/693108969"
-"Aromia's GitHub Stars" = "https://github.com/Arom1a?tab=stars"
+"My GitHub Stars" = "https://github.com/Arom1a?tab=stars"
 
 ["CMU"]
 "Student Portal" = "https://apply-precollege.studentaffairs.cmu.edu/portal/student"
 "Student Information Online" = "https://s3.andrew.cmu.edu/sio/mpa/"
 "Pittsburgh Bus Routes" = "https://andysbuses.com/"
+"CMU Eats" = "https://cmueats.com/"
+"CMU Courses" = "https://cmucourses.com/"
 
 ["Learning / General"]
 "Marxists Archive" = "https://www.marxists.org/chinese/index.html/"
@@ -39,30 +40,12 @@
 
 ["Learning / Mathematics"]
 "AoPS" = "https://artofproblemsolving.com/wiki/"
-"Writer" = "https://writer.com/"
 "HELM" = "https://nucinkis-lab.cc.ic.ac.uk/HELM/helm_workbooks.html"
 "OpenIntro" = "https://www.openintro.org/"
 "CalculusMadeEasy" = "http://calculusmadeeasy.org/"
 "SPSSpro" = "https://www.spsspro.com/"
 "Cambridge Notes" = "https://dec41.user.srcf.net/notes/"
 "Digital Signals Theory" = "https://brianmcfee.net/dstbook-site/content/intro.html"
-
-["Learning / AP Courses"]
-"Collegeboard" = "https://www.collegeboard.org/"
-"Crackap" = "https://www.crackap.com/"
-"The Physics Hypertextbook" = "https://physics.info/"
-
-["Learning / Web and Software Security"]
-"CTF Wiki" = "https://ctf-wiki.org/"
-"Hack The Box" = "https://www.hackthebox.com/"
-"Red Team Note" = "https://dmcxblue.gitbook.io/red-team-notes-2-0/"
-"Micro8 (penetrate)" = "https://micro8.gitbook.io/micro8/"
-"Deus X64" = "https://deusx64.ai/"
-"PWNABLE.KR" = "https://pwnable.kr/"
-"PWNABLE.TW" = "https://pwnable.tw/"
-"PicoCTF" = "https://picoctf.org"
-"Reverse Engineering for Everyone" = "https://0xinfection.github.io/reversing/"
-"crackmes" = "https://crackmes.one/"
 
 ["Learning / Rust"]
 "Rust Official Book" = "https://doc.rust-lang.org/book/"
@@ -81,6 +64,22 @@
 "Embedded Rust" = "https://docs.rust-embedded.org/book/"
 "Embedded Rust Discovery" = "https://docs.rust-embedded.org/discovery/"
 "Embedded Rust Discovery Microbit" = "https://docs.rust-embedded.org/discovery/microbit/"
+
+["Learning / Programming Languages"]
+"CS Self-learning" = "https://csdiy.wiki/"
+"Exercism" = "https://exercism.org/"
+"Free Code Camp" = "https://www.freecodecamp.org/learn/"
+"LearnXinY" = "https://learnxinyminutes.com/"
+"Coding Handbooks" = "https://flaviocopes.com/books/"
+"Developer Toolkit" = "https://toolkit.addy.codes/"
+"Developer Roadmaps" = "https://roadmap.sh/"
+"Cpp Primer" = "https://github.com/pezy/CppPrimer/"
+"LearnCpp" = "https://www.learncpp.com/"
+"Cpp Quiz" = "https://cppquiz.org"
+"Python Books" = "https://pythonbooks.revolunet.com/"
+"Python-100-Days" = "https://github.com/jackfrued/Python-100-Days"
+"PythonChallenge" = "http://www.pythonchallenge.com"
+"Learn Python Org" = "https://learnpython.org/"
 
 ["Learning / Frontend Mess"]
 "Frontend Masters" = "https://frontendmasters.com/"
@@ -108,24 +107,13 @@
 "YesIcon" = "https://yesicon.app/"
 "OKLCH Color Palette" = "https://oklch.fyi/"
 "LoadMore" = "https://loadmo.re/"
+"Dark Design" = "https://www.dark.design/"
+"Footer Design" = "https://www.footer.design/"
+"Landingly" = "https://www.landingly.co/"
+"Godly" = "https://godly.website/"
+"AwwWards" = "https://www.awwwards.com/"
 
-["Learning / Programming Languages"]
-"CS Self-learning" = "https://csdiy.wiki/"
-"Exercism" = "https://exercism.org/"
-"Free Code Camp" = "https://www.freecodecamp.org/learn/"
-"LearnXinY" = "https://learnxinyminutes.com/"
-"Coding Handbooks" = "https://flaviocopes.com/books/"
-"Developer Toolkit" = "https://toolkit.addy.codes/"
-"Developer Roadmaps" = "https://roadmap.sh/"
-"Cpp Primer" = "https://github.com/pezy/CppPrimer/"
-"LearnCpp" = "https://www.learncpp.com/"
-"Cpp Quiz" = "https://cppquiz.org"
-"Python Books" = "https://pythonbooks.revolunet.com/"
-"Python-100-Days" = "https://github.com/jackfrued/Python-100-Days"
-"PythonChallenge" = "http://www.pythonchallenge.com"
-"Learn Python Org" = "https://learnpython.org/"
-
-["Learning / Misc. (industrial)"]
+["Learning / General CS"]
 "The Missing Semester" = "https://missing.csail.mit.edu/"
 "Git Cheatsheet" = "https://cs.fyi/guide/git-cheatsheet/"
 "Vim Cheatsheet" = "https://vim.rtorr.com/"
@@ -142,11 +130,23 @@
 "It-tools" = "https://it-tools.tech/"
 "IndieHackers" = "https://www.indiehackers.site/"
 
-["Learning / Artificial Intelligence"]
+["Learning / AIML"]
 "Hugging Face" = "https://huggingface.co/"
 "Hugging Face Mirror" = "https://hf-mirror.com/"
 "Civit AI" = "https://civitai.com/"
 "ConvNetJS" = "https://cs.stanford.edu/people/karpathy/convnetjs/"
+
+["Learning / Computer Security"]
+"CTF Wiki" = "https://ctf-wiki.org/"
+"Hack The Box" = "https://www.hackthebox.com/"
+"Red Team Note" = "https://dmcxblue.gitbook.io/red-team-notes-2-0/"
+"Micro8 (penetrate)" = "https://micro8.gitbook.io/micro8/"
+"Deus X64" = "https://deusx64.ai/"
+"PWNABLE.KR" = "https://pwnable.kr/"
+"PWNABLE.TW" = "https://pwnable.tw/"
+"PicoCTF" = "https://picoctf.org"
+"Reverse Engineering for Everyone" = "https://0xinfection.github.io/reversing/"
+"crackmes" = "https://crackmes.one/"
 
 ["Learning / Electrical Engineering"]
 "CPU Land" = "https://cpu.land/"
@@ -154,6 +154,11 @@
 "半导小芯" = "https://www.semiee.com"
 "All Data Sheet" = "https://www.alldatasheet.com"
 "Learn About Circuits" = "https://www.allaboutcircuits.com/"
+
+["Learning / AP Courses"]
+"Collegeboard" = "https://www.collegeboard.org/"
+"Crackap" = "https://www.crackap.com/"
+"The Physics Hypertextbook" = "https://physics.info/"
 
 ["Learning / English"]
 "新东方 TPO" = "https://liuxue.koolearn.com/toefl/"
@@ -193,6 +198,7 @@
 
 ["Tools"]
 "metacubexd" = "https://d.metacubex.one/#/proxies"
+"1ms Dog" = "https://1ms.dog/"
 
 ["Tools / Pictures"]
 "Saucenao" = "https://saucenao.com/"
