@@ -1,10 +1,9 @@
 mod config;
 mod db;
 mod routes;
+mod state;
 
-use axum::{Router, routing::get};
-
-use crate::config::Config;
+use crate::{config::Config, state::AppState};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -15,12 +14,14 @@ async fn main() -> anyhow::Result<()> {
     let db = db::connect_and_migrate(&config.database_url).await?;
     println!("db connected and migrated");
 
-    // build our application with a single route
-    let app = Router::new().route("/", get(|| async { "Hello, World!" }));
+    let state = AppState { db };
+    let app = routes::router(state);
 
-    // run our app with hyper, listening globally on PORT
-    let listener = tokio::net::TcpListener::bind(format!("localhost:{}", &config.port)).await?;
-    println!("axum is hosting the server...");
+    let listener = tokio::net::TcpListener::bind(("0.0.0.0", config.port)).await?;
+    println!(
+        "axum is hosting the server at http://{}",
+        listener.local_addr()?
+    );
     axum::serve(listener, app).await?;
 
     Ok(())
