@@ -19,7 +19,7 @@ async fn main() -> anyhow::Result<()> {
 
     let listener = tokio::net::TcpListener::bind(("0.0.0.0", config.port)).await?;
     println!(
-        "axum is hosting the server at http://{}",
+        "axum is hosting the server at http://{}/api",
         listener.local_addr()?
     );
     axum::serve(listener, app).await?;
