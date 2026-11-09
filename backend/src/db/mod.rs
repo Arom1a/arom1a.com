@@ -1,0 +1,10 @@
+use sqlx::{PgPool, postgres::PgPoolOptions};
+
+pub async fn connect_and_migrate(database_url: &str) -> Result<PgPool, sqlx::Error> {
+    let db = PgPoolOptions::new()
+        .max_connections(5)
+        .connect(database_url)
+        .await?;
+    sqlx::migrate!("./migrations").run(&db).await?;
+    Ok(db)
+}

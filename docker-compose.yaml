@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: arom1a-dot-com-db
+    environment:
+      POSTGRES_PASSWORD: donotuseinprod
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
