@@ -1,6 +1,6 @@
-use crate::db::gems::Gem;
+use std::fmt::Display;
 
-pub fn label_gems_text(gems: &Vec<Gem>) -> String {
+pub fn label_gems_text<T: Display>(gems: &[T]) -> String {
     let width = gems.len().to_string().len();
     gems.iter()
         .enumerate()

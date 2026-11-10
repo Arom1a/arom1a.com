@@ -33,6 +33,7 @@ dependencies = [
  "dotenvy",
  "serde",
  "sqlx",
+ "thiserror",
  "tokio",
  "uuid",
 ]
