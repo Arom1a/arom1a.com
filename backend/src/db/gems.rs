@@ -17,10 +17,10 @@ impl Display for Gem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
             f,
-            "UUID: {}\nurl: {}\nDesciption: {}\nCollected at: {}",
-            self.public_id,
+            "url: {}\nDesciption: {}\nUUID: {}\nCollected at: {}",
             self.url,
             self.description.as_deref().unwrap_or_default(),
+            self.public_id,
             self.collected_at
         )
     }

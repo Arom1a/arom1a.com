@@ -8,6 +8,7 @@ use serde::{Deserialize, Serialize};
 use crate::{
     db::gems::{Gem, fetch_random},
     state::AppState,
+    utils::label_gems_text,
 };
 
 #[derive(Deserialize)]
@@ -42,9 +43,5 @@ pub async fn random_txt(
         eprintln!("{e}");
         (StatusCode::INTERNAL_SERVER_ERROR, "internal server error")
     })?;
-    Ok(gems
-        .iter()
-        .map(|g| g.to_string())
-        .collect::<Vec<_>>()
-        .join("\n\n"))
+    Ok(label_gems_text(&gems))
 }
