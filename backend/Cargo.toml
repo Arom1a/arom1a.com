@@ -7,11 +7,15 @@ publish = false
 [dependencies]
 anyhow = "1.0.104"
 axum = "0.8.9"
+chrono = { version = "0.4.45", features = ["serde"] }
 dotenvy = "0.15.7"
+serde = { version = "1.0.229", features = ["derive"] }
 sqlx = { version = "0.9.0", features = [
   "runtime-tokio",
   "tls-rustls",
   "postgres",
   "uuid",
+  "chrono",
 ] }
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
+uuid = { version = "1.29.2", features = ["serde", "v7"] }
