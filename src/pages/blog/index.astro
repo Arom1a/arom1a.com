@@ -23,8 +23,8 @@ const items = [...groups.values()].map((group) => {
 
   return {
     date: group[0].data.pubDate,
-    en: { title: en.data.title, href: `/blog/${en.id}` },
-    zh: { title: zh.data.title, href: `/blog/${zh.id}` },
+    en: { title: en.data.title, href: `/blog/${en.id}/` },
+    zh: { title: zh.data.title, href: `/blog/${zh.id}/` },
   };
 });
 ---
